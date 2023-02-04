@@ -1,0 +1,23 @@
+.itemGaleryContainer{
+    background: rgb(238, 234, 241);
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    margin: auto;
+    width: 250px;
+}
+
+.itemGaleryContainer img{
+    width: 250px;
+    height: 250px;
+}
+
+.itemGaleryContainer h4{
+    font-size: 23px;
+    margin:8px 0px 0px 0px;
+}
+
+.itemGaleryContainer h4{
+    font-size: 18px;
+    margin:8px 0px 0px 0px;
+}

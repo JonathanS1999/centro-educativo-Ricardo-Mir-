@@ -1,0 +1,67 @@
+.containerPQ{
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	background-image: url("../../images/galeria/img1.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.containerPQ .titlePQ{
+ display: flex;
+ align-content: center;
+ background: rgba( 13, 1, 69 , 0.6);
+}
+
+.containerPQ .titlePQ div{
+	margin: auto;
+	padding: 15px;
+}
+
+.containerPQ .titlePQ div h4{
+	font-size: 25px;
+	font-weight: bold;
+	color: white;
+	border-bottom: 4px solid  #ffe000;
+	margin: auto;
+
+}
+
+.containerPQ .containerMSJ{
+	display: flex;
+	align-content: space-evenly;
+	background: rgba( 0, 0, 0 , 0.7);
+}
+
+.containerPQ .containerMSJ .contentMSJ{
+background:  #05486a;
+margin: 2% 0 2% 0;
+display: flex;
+flex-direction: column;
+align-content: center;
+padding: 3%;
+border-radius: 0px 20px 20px 0px;
+}
+
+.containerPQ .containerMSJ .contentMSJ div{
+margin: auto;
+}
+
+.containerPQ .containerMSJ .contentMSJ p{
+	font-size: 20px;
+	color: white;
+	font-weight: bold;
+}
+
+.containerPQ .containerMSJ .imgPQ{
+ display: flex;
+ align-content: center;
+  margin: 5px;
+}
+
+.imgPQ img{
+	width: 70%;
+	height: auto;
+	margin: auto;
+}

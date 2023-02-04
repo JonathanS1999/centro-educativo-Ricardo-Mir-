@@ -1,0 +1,44 @@
+.myfooter{
+	background-color: rgb(0, 0, 97);
+	display: flex;
+	justify-content: space-around ;
+}
+
+.fontWhite{
+	color: white;
+}
+
+.icons{
+	width: 25px;
+	height: 25px;
+	margin: 0 6px 0 3px;
+}
+
+.divMinEd{
+	display: flex;
+}
+
+.divMinEd .centerDiv{
+	margin: auto;
+	display: flex;
+}
+
+.divMinEd h5{
+	margin: 0;
+	padding: 0;
+}
+.divMinEd .logoRepPa{
+	width: 45px;
+	height: 40px;
+	margin: 0 0 0 60px;
+	display: block;
+}
+
+.centerDiv2{
+	border-left: 3px solid white;
+	padding-left: 3px;
+}
+
+.mineducMargin{
+	margin: 3px;
+}

@@ -1,0 +1,97 @@
+.itemNI{
+	display: flex;
+	flex-direction: column;
+	background:  #f0efe3;
+	margin: auto;
+	width: 300px;
+	height: 450px;
+	box-shadow: 0px 0px 1px 1px rgba( 32, 30, 9 , 0.3);
+	border-radius: 3px;
+}
+
+.itemNI .topContentNI{
+	display: flex;
+	margin:0 auto 0 auto;
+}
+
+.itemNI .topContentNI img{
+	width: 300px;
+	height: 200px;
+	border-radius: 3px 3px 0px 0px;
+}
+
+.itemNI .fechaNI{
+	display: flex;
+	align-content: space-evenly;
+	background: salmon;
+	position: relative;
+	width: 100%;
+}
+
+.itemNI .fechaNI .elementRightFeha{
+	width: 30%;
+	margin: 0 auto 0 auto;
+	background:  #f5bbf5;
+}
+
+.itemNI .fechaNI .insideDivFecha{
+	display: flex;
+	align-content: space-around;
+	width: 70%;
+	margin: 0 auto 0 auto;
+	background:  #f5bbf5;
+}
+
+.itemNI .fechaNI .insideDivFecha div{
+	margin: auto;
+}
+
+.itemNI .fechaNI .insideDivFecha div h4{
+	margin: 0px;
+	padding: 9px;
+}
+
+.itemNI .fechaNI img{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 3;
+	width: 60px;
+	height: 60px;
+}
+
+
+.itemNI .bottomCardNI{
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	margin-left: 2%;
+	margin-right: 2%;
+}
+
+.itemNI .bottomCardNI .centerContentNI{
+	margin: auto;
+}
+
+.itemNI .bottomCardNI .centerContentNI h4{
+	font-size: 22px;
+	font-weight: bold;
+}
+
+
+.itemNI .bottomCardNI .centerContentNI p{
+	font-size: 16px;
+	font-weight: bold;
+}
+ .itemNI .bottomCardNI .centerContentNI button{
+	font-size: 20px;
+	font-weight: bold;
+	border-radius: 50px;
+	color:  #e9d207 ;
+	padding: 8px;
+	border-style: none;
+}
+
+ .itemNI .bottomCardNI .centerContentNI button:hover{
+	color:   #18860e ;
+}

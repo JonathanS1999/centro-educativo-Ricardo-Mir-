@@ -1,0 +1,70 @@
+.containerMainMisionVision{
+display: flex;
+flex-direction: column;
+background:  #bcbde5;
+}
+
+.titleMisionVision{
+	display: flex;
+	flex-direction: row;
+	align-content: space-around;
+	background:    #3e56ee;
+}
+
+.titleMisionVision div{
+	margin: auto;
+}
+
+.titleMisionVision div h4{
+	font-size: 25px;
+	font-weight: bold;
+	color: white;
+	border-bottom: 4px solid  #ffe000;
+}
+
+.containerMisionVision{
+	display: flex;
+	align-content: space-evenly;
+}
+
+.containerMisionVision .divMisionVision{
+	width: 55%;
+	padding-left: 3%;
+	background: #07437c;
+}
+
+
+.containerMisionVision .divMisionVision .insideContainer .justContentMV{
+	margin: 8px;
+	display: flex;
+	flex-direction: row;
+	align-content: space-evenly;
+	height: 160px;
+	color: white;
+}
+
+.containerMisionVision .divMisionVision .insideContainer .justContentMV .div1{
+	margin: auto;
+}
+
+.containerMisionVision .divMisionVision .insideContainer .justContentMV .div1 img{
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+}
+
+.containerMisionVision .divMisionVision .insideContainer .justContentMV .div2{
+	display: block;
+	margin: 5px;
+	background: #07437c;
+	padding-left: 5%;
+	padding-top: 3%;
+}
+
+.imgMisionVision{
+	background: salmon;
+	width: 200px;
+	height: 200px;
+	margin: auto;
+	border-radius: 50%;
+}

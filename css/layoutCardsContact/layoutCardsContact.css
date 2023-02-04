@@ -1,0 +1,42 @@
+.hourAT{
+display: flex;
+flex-direction: column;
+align-content: space-around;
+}
+.hourAT .h4AT{
+  margin: 30px auto auto auto;
+  font-size: 40px;
+  font-weight: bold;
+  color: black;
+}
+
+.hourAT .h5AT{
+    margin: auto;
+    font-size: 30px;
+    font-weight: bold;
+    color: black
+}
+
+.containerCardContacts{
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+}
+
+.containerCardContacts .containerCardContacts2{
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    align-content: space-evenly;
+    margin: 2% auto 2% auto;
+    padding: 3%;
+}
+
+.containerCardContacts .containerCardContacts2 .item1Contac{
+margin: 15px auto auto auto;
+}
+
+
+.containerCardContacts .containerCardContacts2 .item1Contac2{
+    margin: 5px auto auto auto;
+}

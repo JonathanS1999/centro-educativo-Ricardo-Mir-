@@ -1,0 +1,28 @@
+.containerNoticesIndex{
+	width: 100%;
+	background:  #e7e2ec;	
+	flex-direction: column;
+	padding-bottom: 2%;
+}
+
+.containerNoticesIndex .titleNoticesIndex{
+	display: flex;
+	align-content: space-evenly;
+}
+
+.containerNoticesIndex .titleNoticesIndex div{
+	margin: auto;
+}
+
+.containerNoticesIndex .titleNoticesIndex div h4{
+	font-size: 25px;
+	font-weight: bold;
+	border-bottom: 4px solid  #ffe000;
+	text-shadow: 1px 1px 3px;
+}
+
+.containerNoticesIndex .containerCards-NI{
+	display: flex;
+	margin: 5px;
+	align-content: space-evenly;
+}

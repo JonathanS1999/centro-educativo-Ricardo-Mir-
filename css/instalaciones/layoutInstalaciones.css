@@ -1,0 +1,9 @@
+.containercardIns{
+	display: flex;
+	width: 100%;
+	margin: auto;
+	align-content: space-evenly;
+	background: rgba( 37, 36, 24 , 0.8);
+	padding-top: 8px;
+	padding-bottom: 8px;
+}

@@ -1,0 +1,7 @@
+.layoutGaleryMenu{
+display: flex;
+align-content: space-evenly;
+flex-direction: row;
+background: rgb(238, 234, 241);
+padding: 3%;
+}

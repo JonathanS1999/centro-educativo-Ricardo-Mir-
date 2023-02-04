@@ -1,0 +1,23 @@
+.containerLayoutRedesSociales{
+    display: flex;
+    flex-direction: row;
+    align-content: space-evenly;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+
+.containerLayoutRedesSociales .centerLayoutRedesSociales{
+    display: flex;
+    flex-direction: row;
+    align-content: space-evenly;
+    width: 70%;
+    margin: auto;
+}
+
+.containerLayoutRedesSociales .centerLayoutRedesSociales img {
+ width: 120px;
+ height: 120px;
+ margin: auto;
+ border-radius: 50%;
+}

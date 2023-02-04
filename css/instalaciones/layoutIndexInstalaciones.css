@@ -1,0 +1,86 @@
+.containerLayoutIndexInstalaciones1{
+	width: 100%;
+	background-image: url("../../images/galeria/img1.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.containerLayoutIndexInstalaciones1 .containerLayoutIndexInstalaciones2{
+	display: flex;
+	flex-direction: column;
+	background: rgba(0, 0, 0, 0.4);
+}
+
+.containerLayoutIndexInstalaciones1 .containerLayoutIndexInstalaciones2 .containerTitleLayoutIndIns{
+	display: flex;
+	background: rgba( 1, 0, 44 , 0.7);
+}
+
+.containerLayoutIndexInstalaciones1 .containerLayoutIndexInstalaciones2 .containerTitleLayoutIndIns div{
+	margin: auto;
+}
+
+.containerLayoutIndexInstalaciones1 .containerLayoutIndexInstalaciones2 .containerTitleLayoutIndIns div h4{
+	font-size: 25px;
+	font-weight: bold;
+	color: white;
+	border-bottom: 4px solid  #ffe000;
+}
+
+
+
+.containerLayoutIndexInstalaciones1 .containerLayoutIndexInstalaciones2 .containerLayoutInsideIndIns {
+	display: flex;
+	align-content: space-evenly;
+	flex-direction: row;
+}
+
+.containerLayoutIndexInstalaciones1 .containerLayoutIndexInstalaciones2 .containerLayoutInsideIndIns .miniGaleryIndIns{
+	background: rgba(25, 24, 17, 0.5);
+	width: 60%;
+	margin: auto;
+	padding: 2%;
+}
+.containerLayoutIndexInstalaciones1 .containerLayoutIndexInstalaciones2 .containerLayoutInsideIndIns .descriptionInfoIndIns{
+	background: rgba( 1, 60, 71 , 1.0);
+	width: 40%;
+	margin: 0 auto 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-content: space-evenly;
+}
+.containerLayoutIndexInstalaciones1 .containerLayoutIndexInstalaciones2 .containerLayoutInsideIndIns .descriptionInfoIndIns .descriptionInfoIndIns2{
+	width: 100%;
+	height: 60%;
+	margin: auto 0px auto 0px;
+	display: flex;
+	flex-direction: column;
+	align-content: space-evenly;
+}
+
+.containerLayoutIndexInstalaciones1 .containerLayoutIndexInstalaciones2 .containerLayoutInsideIndIns .descriptionInfoIndIns .descriptionInfoIndIns2 .centerInfoIndIns{
+	margin: auto;
+}
+
+.containerLayoutIndexInstalaciones1 .containerLayoutIndexInstalaciones2 .containerLayoutInsideIndIns .descriptionInfoIndIns .descriptionInfoIndIns2 .centerInfoIndIns p{
+font-size: 20px;
+color: white;
+margin: 0px 10px 0px 10px;
+}
+
+.containerLayoutIndexInstalaciones1 .containerLayoutIndexInstalaciones2 .containerLayoutInsideIndIns .descriptionInfoIndIns .descriptionInfoIndIns2 .centerInfoIndIns button{
+	background:  #75bbf1;
+	box-shadow: 1px 1px 4px 4px rgba(36, 33, 18, 0.7);
+	font-size: 22px;
+	font-weight: bold;
+	color:    #044513  ;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.containerLayoutIndexInstalaciones1 .containerLayoutIndexInstalaciones2 .containerLayoutInsideIndIns .descriptionInfoIndIns .descriptionInfoIndIns2 .centerInfoIndIns button:hover{
+	background:    #c6960c;
+	box-shadow: 1px 1px 5px 5px rgba(36, 33, 18, 0.7);
+	color:     #040f4b;
+}

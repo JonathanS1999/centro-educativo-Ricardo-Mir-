@@ -1,0 +1,98 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+nav{
+	background: pink;
+}
+
+header{
+	display: flex ;
+	justify-items: center ;
+	margin-top: 10px;
+}
+
+.schoolTitle{
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.centerTitle{
+	margin: auto 0px auto 0px;
+}
+
+.h3-d1{
+	display: inline;
+	padding: 5px;
+	margin: 2px auto;
+}
+
+.btnIs{
+	display: inline;
+	padding: 5px;
+	margin: 2px 40px 2px auto;
+	font-size: 20px;
+	font-weight: bold;
+	border-radius: 8px;
+	background-color: #4169ef ;
+	border-color: solid #f5f2ed ;
+	color: white;
+}
+
+.aligment{
+	display: inline;
+	margin: 0 5px 0 5px;
+}
+
+
+.aligmentRightIcons{
+	splay: inline;
+	margin: 0 10px 0 auto;
+}
+
+
+
+
+
+
+	
+		header{
+			background: white;
+		}
+
+		header nav .menu{
+			display: flex;
+			justify-content: space-between;
+			background: green;
+		}
+
+		header nav .menu li ul {
+			flex-direction: column;
+		}
+
+		.li-a{
+			list-style: none;
+		}
+
+		.li-a a {
+			text-decoration: none;
+			font-size: 20px;
+			color: white;
+			padding: 12px 20px;
+			display: block;
+		}
+
+		.li-a a:hover{
+			background: black;
+		}
+
+		.submenu{
+			position: absolute;
+			background-color: green;
+			display: none;
+		}
+
+		.li-a:hover > ul {
+			display: block;
+		}

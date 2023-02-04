@@ -1,0 +1,54 @@
+.containerAdmision{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+}
+
+
+.containerAdmision .containerAdmision2{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    margin: 1% 15% 10% 15%;
+}
+
+.containerAdmision .containerAdmision2 .h4AD{
+    font-size: 35px;
+    font-weight: bold;
+    margin: 30px 0px 5px 0px;
+}
+
+
+.containerAdmision .containerAdmision2 .pAD{
+    font-size: 25px;
+    margin: 10px 0px 5px 10px;
+}
+
+.containerAdmision .containerAdmision2 .h5AD{
+    font-size: 30px;
+    font-weight: bold;
+    margin: 20px 0px 2px 0px;
+}
+
+.containerAdmision .containerAdmision2 .h6AD{
+    font-size: 28px;
+    font-weight: bold;
+    margin: 30px 0px 10px 0px;
+}
+
+.containerAdmision .containerAdmision2 .divNote{
+ background: rgb(190, 2, 2);
+ margin: 5%;
+ border-radius: 5px;
+ padding: 3%;
+ color: aliceblue;
+}
+
+.containerAdmision .containerAdmision2 .divNote span{
+    color: azure;
+    font-size: 27px;;
+    font-weight: bold;
+}

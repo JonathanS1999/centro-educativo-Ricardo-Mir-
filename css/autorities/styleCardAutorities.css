@@ -1,0 +1,80 @@
+.card{
+	width: 300px;
+	height: 380px;
+	border-radius: 20px;
+	box-shadow:  0px 3px 5px 5px rgba(68, 70, 83, 0.3);
+	overflow: hidden;
+	margin: auto;
+	text-align: center ;
+	transition: all 0.25s ;
+	background:  #f9f9fc ;
+}
+
+.card:hover{
+	background:  #152063;
+	box-shadow:  0px 3px 5px 5px rgba(  28, 28, 32 , 0.3);
+}
+
+.card:hover > h4 {
+	color: white;
+}
+
+.card:hover > h5 {
+	color:  #d9dcf0 ;
+}
+
+.card img {
+	margin-top: 8px;
+	width: 220px;
+	height:220px ;
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 50%;
+	border: 2px solid  #e80d0d;
+}
+
+.containercard .card h4{
+	font-weight: bold ;
+	font-size: 20px;
+}
+
+.containercard .card p{
+	padding: 6px;
+	font-size: 16px;
+	background: blanchedalmond;
+	font-weight: bold;
+}
+
+
+
+.promo1{
+	padding: 6px ;
+	font-size: 18px;
+	font-weight: 200;
+	color: blue;
+}
+
+
+
+.promo2{
+	padding: 6px ;
+	font-size: 18px;
+	font-weight: 200;
+	color: orange;
+}
+
+
+.promo3{
+	padding: 6px ;
+	font-size: 18px;
+	font-weight: 200;
+	color: red;
+}
+
+
+
+
+.containercard .card a {
+	font-weight: 500 ;
+	text-decoration: none;
+}
+

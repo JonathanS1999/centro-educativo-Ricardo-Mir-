@@ -1,0 +1,26 @@
+.containerMainLayoutAutorities{
+width: 100%;
+background: #dfdbec;
+padding-bottom: 2%;
+}
+
+.containerMainLayoutAutorities .titleLayoutAutorities{
+	display: flex;
+}
+
+.containerMainLayoutAutorities .titleLayoutAutorities div{
+ margin: auto;
+}
+
+.containerMainLayoutAutorities .titleLayoutAutorities h4{
+	font-size: 25px;
+	font-weight: bold;
+	border-bottom: 4px solid  #ffe000;
+}
+
+.containercard{
+	width: 90%;
+	display: flex;
+	align-content: space-evenly;
+	margin: 0px auto;
+}

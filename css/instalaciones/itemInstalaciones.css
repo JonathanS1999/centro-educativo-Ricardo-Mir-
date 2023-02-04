@@ -1,0 +1,8 @@
+.cardIns {
+	margin: auto;
+}
+
+.cardIns img { /* cambiar el tamaño -> items de galeria de instalaciones*/
+	width: 200px;
+	height: 200px;
+}

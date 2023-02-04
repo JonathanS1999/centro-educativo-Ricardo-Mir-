@@ -1,0 +1,12 @@
+.horarioEscolar{
+    display: flex;
+    align-content: space-around;
+    flex-direction: column;
+    background: #E4E0F6;
+}
+
+.horarioEscolar img{
+    margin: auto;
+    width: 80%;
+    height: auto;
+}

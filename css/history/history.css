@@ -1,0 +1,29 @@
+.containerHistory{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    background: rgb(235, 227, 243);
+}
+
+.containerHistory .titleHistory{
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+    margin-top: 50px;
+}
+
+.containerHistory .titleHistory h4{
+    margin: auto;
+    font-size: 30px;
+    color: rgb(2, 1, 0);
+}
+
+.containerHistory .msjContent{
+margin: 1% 15% 10% 15%;
+}
+
+.containerHistory .msjContent p{
+    font-size: 23px;
+    margin-top: 50px;
+    color: rgb(2, 1, 0);
+}
