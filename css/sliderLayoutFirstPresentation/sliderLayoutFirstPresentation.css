@@ -1,7 +1,9 @@
 .main-container-layout-sliderFP{
-	width: 100%;
-	height: 100%;
+	width: 90%;
+	height: 90%;
+	margin: 1% auto 2% auto;
 	overflow: hidden;
+	position: relative;
 }
 
 .slider-containerFP{
@@ -9,8 +11,37 @@
 	height: 100%;
 	display: flex;
 	margin: 0px;
-	animation: slideet 10s infinite;
+	position: relative;
+	/*animation: slideet 10s infinite;*/
 }
+
+#arrorLeftControl{
+	position: absolute;
+	z-index: 4;	
+	width: 50x;
+	height: 50px;
+	top:45%;
+	left: 0px;
+	border-radius: 50%;
+  }
+
+  #arrorLeftControl:hover{
+	border: 3px solid rgb(243, 149, 8);
+  }
+
+  #arrorRightControl{
+	position: absolute;
+	z-index: 4;
+	width: 50x;
+	height: 50px;
+	top:45%;
+	right: 0px;
+	border-radius: 50%;
+  }
+
+  #arrorRightControl:hover{
+	border: 3px solid rgb(243, 149, 8);
+  }
 
 .slider-containerFP .container-boxFP{
 	display: flex;
