@@ -71,8 +71,6 @@
 				height: 100%;
 				display: flex;
 				margin: 0 auto;
-				padding: 10px;
-				background: orangered;
 				animation: slide 30s infinite alternate ease-in-out;
 			    }
 			 
