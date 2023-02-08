@@ -13,11 +13,10 @@
 	<link rel="stylesheet" type="text/css" href=<?php echo '"'.$varUrlMV.'css/notices/itemCardNotice.css"';?>>
 </head>
 <body>
-
 	<div class="itemNI">
 
 							<div class="topContentNI">
-								<img src=<?php echo '"'.$varUrlMV.'images/notices/notice1.png"';?> />
+								<img src=<?php echo "'".$notices['image_url']."'"; ?> />
 							</div>
 
 							<div class="fechaNI">
@@ -28,7 +27,7 @@
 
 									<div class="insideDivFecha">
 										<div>
-											<h4> Viernes 17 de octubre, 2023</h4>
+											<h4> Miercoles 8 de febrero, 2023</h4>
 										</div>
 									</div>
 
@@ -38,10 +37,20 @@
 
 							<div class="bottomCardNI">
 										<div class="centerContentNI">
-										 	<h4 class="centerContentNI"> Educación pre escolar</h4>
+										 	<h4 class="centerContentNI"> 
+												
+											 <?php
+											 echo $notices['title'];
+											 ?>
+
+											</h4>
 										</div>
 										<div class="centerContentNI">
-										 	<p class="centerContentNI">El proceso de matricula  inicia el lunes 17 de obtubre  y es solo valido para estudiantes con indice de 3.5</p>
+										 	<p class="centerContentNI">
+												<?php
+												   echo $notices['description'];
+                                                 ?>
+											</p>
 										</div>
 										<div class="centerContentNI">
 											<button>Continuar leyendo</button>

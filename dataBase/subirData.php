@@ -48,7 +48,7 @@ if(isset($_POST['btn'])){
             $img_url = $carpetaDestino . $nombre_imagen;
         move_uploaded_file($_FILES['imagen']['tmp_name'], $img_url);
         $subirDatos = new SubirData();
-        $subirDatos->setDataServer($img_url, $title, $description ); 
+        $subirDatos->setDataServer("images/notices/".$nombre_imagen, $title, $description ); 
 
     }else{
         echo " la imagen es demasiado grande";
