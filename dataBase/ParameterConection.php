@@ -1,9 +1,10 @@
 <?php
 
 class ParameterConection{
-    static $host = "";
-    static $database = "";
-    static $paswword = "";
+    static protected $host = "localhost";
+    static protected $database = "cebgricardomiro";
+    static protected $user_db= "root";
+    static protected $paswword = "";
 }
 
 ?>

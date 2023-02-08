@@ -2,6 +2,8 @@
 	
     var width;
     var widthIncremental=0;
+    var interval;
+    var items=2;
 
     $(document).ready(function(){
 
@@ -9,8 +11,24 @@
             var box = document.querySelector('.slider-containerFP');
             var width = box.offsetWidth;
             var height = box.offsetHeight;
-            box.style.marginLeft ="0%";
 
+            widthIncremental--;
+            if(widthIncremental<0){
+                widthIncremental=items-1;
+            }
+
+            var auxWidth=(-1*(100*widthIncremental))+"%";
+
+            box.style.marginLeft =auxWidth;
+
+            var box = document.querySelector('.slider-containerFP');
+            width = box.offsetWidth;
+
+            console.log(" si pasa por aqui left");
+            
+            clearInterval(interval);
+            console.log("aux="+auxWidth);
+            interval=setInterval(sliderPrincipal, 3500, box , width, items);
 
 		});
 
@@ -20,7 +38,24 @@
             var width = box.offsetWidth;
             var height = box.offsetHeight;
 
-            box.style.marginLeft="-100%";
+            
+            widthIncremental++;
+            if(widthIncremental>=items){
+                widthIncremental=0;
+            }
+            var auxWidth=(-1*(100*widthIncremental))+"%";
+
+            box.style.marginLeft=auxWidth;
+
+            var box = document.querySelector('.slider-containerFP');
+            width = box.offsetWidth;
+
+            console.log(" si pasa por aqui right");
+
+            clearInterval(interval);
+
+            interval=setInterval(sliderPrincipal, 3500, box , width, items);
+           
 
 		});
 
@@ -28,9 +63,9 @@
 
         var box = document.querySelector('.slider-containerFP');
          width = box.offsetWidth;
-         var items=2;
+         items=2;
 
-        setInterval(sliderPrincipal, 2500, box , width, items);
+       interval= setInterval(sliderPrincipal, 3500, box , width, items);
        
 	});
 

@@ -9,10 +9,11 @@
 <body>
 	<script src="js/controllerSlider.js">
 	</script>
+	<script src="https://kit.fontawesome.com/2f997e9f9a.js" crossorigin="anonymous"></script>
 
 <div class="main-container-layout-sliderFP">
 
-<img  src="images/icons/arrows/arrowLeft.png" id="arrorLeftControl"/>
+<i id="arrorLeftControl" class="fa-sharp fa-solid fa-chevron-left"></i> 
 
 <div class="slider-containerFP">
 
@@ -29,8 +30,8 @@
 	
 </div>
 
-<img src="images/icons/arrows/arrowRight.png" id="arrorRightControl"/>
+ <i id="arrorRightControl" class="fa-sharp fa-solid fa-chevron-right"></i> 
 
-</div><!--fin main-container-layout-slider-->
+</div>
 </body>
 </html>

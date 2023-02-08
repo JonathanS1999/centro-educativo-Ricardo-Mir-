@@ -15,7 +15,7 @@
 
 		<div class="container-form">
 			<div class="div-title"><h5 class="title">Sesión</h5></div>
-			<form class="form" action="" method="post">
+			<form class="form" action="php/sessionAdmin/adminSession.php" method="post">
 				<label>User</label>
 				<input type="text" name="user">
 				<label>Password</label>
