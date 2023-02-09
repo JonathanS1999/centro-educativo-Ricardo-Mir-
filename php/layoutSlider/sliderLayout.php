@@ -7,11 +7,12 @@
 	<link rel="stylesheet" type="text/css" href="css/layoutSlider/sliderLayout.css">
 </head>
 <body>
+<script src="js/controllerSliderNoticesIndex.js">
+	</script>
 
 <div class="main-container-layout-slider">
-<!--<div class="slider-container">-->
 
-
+<i id="arrorLeftControlNT" class="fa-sharp fa-solid fa-chevron-left"></i> 
 
 
 <?php
@@ -20,32 +21,6 @@
     include("database/ParameterConection.php");
 
     class ViewNotices extends  ParameterConection {
-
-
-
-		function getCountNtices(){
-			/*
-			$count=0;
-			try {
-
-            
-				$conection = new PDO('mysql:host='. self::$host. '; dbname='.self::$database , self::$user_db, self::$paswword);
-				$conection->exec('SET CHARACTER SET UTF8');
-				$sql = 'select COUNT(id) from dataproyectnotices;';
-				$result = $conection->prepare($sql);
-				$result->execute();
-				$result->rowCount();
-				$count=$result->rowCount();
-				echo "<h2> "
-	
-			   
-			}catch(Exception $e){
-				die("error ".$e->getMessage());
-			}finally{
-				$conection = null;
-			}
-			return $count;*/
-		}
 
       function getNoytices(){
 
@@ -63,19 +38,30 @@
 			   if ($module>0){
 				$auxMas++;
 			   }
-			   echo "<h2> width: ".($auxMas*100)."% </h2>";
+
+			   
 			   
 			   echo " <style>
+
 			   .slider-container{
 				width: ".($auxMas*100)."%;
 				height: 100%;
 				display: flex;
 				margin: 0 auto;
-				animation: slide 30s infinite alternate ease-in-out;
+				transition: margin-left 1s;
+				animation: slide 15s infinite alternate ease-in-out;
 			    }
-			 
-			   </style>";
-			   
+				
+				.slider-container .container-box{
+					display: flex;
+					width: 100%;
+					height: 100%;
+				}
+
+				";
+
+			echo "</style>"; 
+
 
 			   echo "<div width='" . ($auxMas*100)."%'   class='slider-container'  >";
 			   
@@ -116,9 +102,8 @@
     $viewNotices->getNoytices();
 
     ?>
+ <i id="arrorRightControlNT" class="fa-sharp fa-solid fa-chevron-right"></i> 
 
-
-<!--</div>--fin slider-container -->
 </div><!--fin main-container-layout-slider-->
 </body>
 </html>
