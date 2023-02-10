@@ -8,13 +8,21 @@
     <link rel='stylesheet' type='text/css' media='screen' href='../../css/galery/itemGalery.css'>
 </head>
 <body>
+
     <div class="itemGaleryContainer">
-        <img src="../../images/portada2.jpg"/>
-        <h4>Semana del campesino</h4>
-        <p>Los documentos solicitados tienen que presentarlos
-             completos en la secretaría del Colegio.
-             Los créditos escolares de este periodo deben traerlos
-              una vez culmine el curso escolar 2022</p>
+         <img src=<?php echo "'../../".$notices['image_url']."'"; ?> />
+        <h4>
+            
+        <?php
+		echo $notices['title'];
+		?>
+        </h4>
+        <p>
+            <?php
+			 echo $notices['description'];
+             ?>
+             
+            </p>
     </div>
 </body>
 </html>

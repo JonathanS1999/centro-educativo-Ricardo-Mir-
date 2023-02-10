@@ -1,6 +1,6 @@
 <?php
 
-include ("../../database/ParameterConection.php");
+include ("database/ParameterConection.php");
 class IniciarSesion extends ParameterConection{
 
     static function verifiPaswd($user, $passwd){
@@ -19,7 +19,7 @@ class IniciarSesion extends ParameterConection{
             $result->execute(array($user, $passwd));
 
             while ($user = $result->fetch(PDO::FETCH_ASSOC)){
-                echo " si esxite el usuario ".$user['user'];
+                header("Location:php/sessionAdmin/screemAdmin.php");
             }
 
            
@@ -42,8 +42,8 @@ if( isset($_POST["user"])){
     $passw = $_POST["password"];
     IniciarSesion::verifiPaswd($user,$passw);
 
+} else {
+    echo " se ha entrado por primera vez";
 }
-
-
 
 ?>

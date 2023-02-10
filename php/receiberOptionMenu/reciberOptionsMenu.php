@@ -54,8 +54,6 @@ if(isset($_GET["op"])){
 				break;
 			case "ga":
 				include("../galery/containerGalery/layoutGalery.php");
-				include("../galery/containerGalery/layoutGalery.php");
-				include("../galery/containerGalery/layoutGalery.php");
 				break;
 	}
 

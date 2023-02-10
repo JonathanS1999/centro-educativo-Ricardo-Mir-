@@ -11,21 +11,25 @@
 
 <div class="popup-out-window">
 
+<?php
+ include("php/sessionAdmin/adminSession.php");
+?>
+
 	<div class="popup-container">
 
 		<div class="container-form">
 			<div class="div-title"><h5 class="title">Sesión</h5></div>
-			<form class="form" action="php/sessionAdmin/adminSession.php" method="post">
+			<form class="form" method="post">
 				<label>User</label>
 				<input type="text" name="user">
 				<label>Password</label>
 				<input type="text" name="password">
 				<div class="container-buttons">
 					<div>
-					<input type="submit" class="btnsession" value="Enviar datos" name="">
+					<input type="submit" class="btnsession" value="Enviar datos" name="btn">
 				    </div>
 				    <div>
-					<input type="submit" class="btnolv" value="¿ Olvidó su contraseña ?" name="">
+					<input type="submit" class="btnolv" value="¿ Olvidó su contraseña ?" name="getpassw">
 				    </div>
 				</div>
 			</form>
