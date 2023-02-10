@@ -11,7 +11,7 @@
 
     <?php
     $showAllNotices=true;
-
+   /*
     include("ParameterConection.php");
 
     class ViewNotices extends  ParameterConection {
@@ -51,7 +51,7 @@
     $viewNotices->getNoytices();
 
     echo "<h2> si pasa por aqui noticias </h2>";
-
+    */
     ?>
 
     <div class="layoutContainerAllNotices">

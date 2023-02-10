@@ -61,6 +61,10 @@ background:  #bcbde5;
 	padding-top: 3%;
 }
 
+.containerMisionVision .divMisionVision .insideContainer .justContentMV .div2 p{
+	font-size: 25px;
+}
+
 .imgMisionVision{
 	background: salmon;
 	width: 200px;
