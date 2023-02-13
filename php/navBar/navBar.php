@@ -143,7 +143,7 @@
 		<li class="li-a"><a href="#">Espacio Informativo</a>
       <ul class="submenu">
 				<li class="li-a"> <a href=<?php echo $urlOptionSelected.'&op=nt"'; ?>>Noticias</a></li>
-				<li class="li-a"> <a href=<?php echo $urlOptionSelected.'&op=nt"'; ?>>Proyectos</a></li>
+				<li class="li-a"> <a href=<?php echo $urlOptionSelected.'&op=pr"'; ?>>Proyectos</a></li>
 				<li class="li-a"> <a href=<?php echo $urlOptionSelected.'&op=nt"'; ?>>Póliza y seguro</a></li>
 			</ul>
 		</li>
@@ -155,7 +155,7 @@
 
 		</li>
 		<li class="li-a"><a href= <?php echo $urlOptionSelected.'&op=co"'; ?>>Contactos</a></li>
-		<li class="li-a"><a href= <?php echo $urlOptionSelected.'&op=ga"'; ?>>Galeria</a></li>
+		<li class="li-a"><a href= <?php echo $urlOptionSelected.'&op=ga&tg=2"'; ?>>Galeria</a></li>
 	</ul>
 </nav>
 

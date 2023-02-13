@@ -10,7 +10,13 @@
 </head>
 <body>
 
-<form action="" method="post" enctype="multipart/form-data">
+<?php
+if(isset($_GET['op'])){
+ $op=$_GET['op'];
+}
+?>
+
+<form action=<?php echo "'subirDataForm.php?op=".$op."'"; ?> method="post" enctype="multipart/form-data">
     <table>
         <tr>
         <td><label for="imagen" >Imagen

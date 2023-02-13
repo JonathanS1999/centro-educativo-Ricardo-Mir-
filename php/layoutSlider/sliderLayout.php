@@ -12,8 +12,6 @@
 
 <div class="main-container-layout-slider">
 
-<i id="arrorLeftControlNT" class="fa-sharp fa-solid fa-chevron-left"></i> 
-
 
 <?php
     $showAllNotices=true;
@@ -28,10 +26,14 @@
             
                $conection = new PDO('mysql:host='. self::$host. '; dbname='.self::$database , self::$user_db, self::$paswword);
                $conection->exec('SET CHARACTER SET UTF8');
-               $sql = 'SELECT * FROM dataproyectnotices;';
+               $sql = 'SELECT * FROM dataproyectnotices where tipo=0;';
                $result = $conection->prepare($sql);
                $result->execute();
 			   $count=$result->rowCount();
+
+			   if ( $count ==0){
+				echo " <h3> No hay noticias para mostrar </h3>";
+			   } else {
 			   $module=($count%3);
 			   $auxMas=(int)($count/3);
 
@@ -62,6 +64,8 @@
 
 			echo "</style>"; 
 
+			echo "<i id='arrorLeftControlNT' class='fa-sharp fa-solid fa-chevron-left'></i> ";
+
 
 			   echo "<div width='" . ($auxMas*100)."%'   class='slider-container'  >";
 			   
@@ -82,9 +86,19 @@
 				   $count++;
                }
 
+
+			
+
+
 			   echo $arrayDiv[1];
 
 			   echo "</div>";
+
+			   echo  "<i id='arrorRightControlNT' class='fa-sharp fa-solid fa-chevron-right'></i> ";
+
+
+			}
+			  
    
               
            }catch(Exception $e){
@@ -102,7 +116,7 @@
     $viewNotices->getNoytices();
 
     ?>
- <i id="arrorRightControlNT" class="fa-sharp fa-solid fa-chevron-right"></i> 
+
 
 </div><!--fin main-container-layout-slider-->
 </body>

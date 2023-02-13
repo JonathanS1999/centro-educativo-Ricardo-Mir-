@@ -18,8 +18,8 @@
 <div class="containerItemsAdmin">
 
 <?php
-$arrayNameItems = array("noticias","proyectos", "galeria","autoridades");
-for ($i = 0; $i < 4; $i++){
+$arrayNameItems = array("noticias","proyectos", "galeria","autoridades" , "instalaciones");
+for ($i = 0; $i < count($arrayNameItems); $i++){
     $id = "itemCard" . $i;
     include("itemCardAdmin.php");
 }

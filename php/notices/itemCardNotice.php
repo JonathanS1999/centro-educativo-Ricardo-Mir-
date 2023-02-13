@@ -16,7 +16,7 @@
 	<div class="itemNI">
 
 							<div class="topContentNI">
-								<img src=<?php echo "'".$notices['image_url']."'"; ?> />
+								<img src=<?php echo "'".$varUrlMV."".$notices['image_url']."'"; ?> />
 							</div>
 
 							<div class="fechaNI">
@@ -27,7 +27,10 @@
 
 									<div class="insideDivFecha">
 										<div>
-											<h4> Miercoles 8 de febrero, 2023</h4>
+											<h4> 
+											<?php
+											echo "".$notices['fecha'];
+											?></h4>
 										</div>
 									</div>
 
@@ -48,12 +51,25 @@
 										<div class="centerContentNI">
 										 	<p class="centerContentNI">
 												<?php
-												   echo $notices['description'];
+												    $noticeDescription=$notices['description'];
+												   if(strlen($noticeDescription)>120 || str_word_count($noticeDescription)>20){
+													echo substr($noticeDescription,0,120) . " ...";
+												   }else{
+													echo $noticeDescription;
+												   }
                                                  ?>
 											</p>
 										</div>
 										<div class="centerContentNI">
-											<button>Continuar leyendo</button>
+											<a href=<?php 
+											if ($index==2){
+												echo "'reciberOptionsMenu.php?view=1&op=ntdt&id=".$notices['id']."'";
+											}else{
+											 echo "'php/receiberOptionMenu/reciberOptionsMenu.php?view=1&op=ntdt&id=".$notices['id']."'";
+										      }
+										  ?>> 
+												Continuar leyendo
+											</a>
 										</div>
 						    </div>
 				

@@ -83,7 +83,8 @@
 	font-size: 16px;
 	font-weight: bold;
 }
- .itemNI .bottomCardNI .centerContentNI button{
+ .itemNI .bottomCardNI .centerContentNI a{
+	text-decoration: none;
 	font-size: 20px;
 	font-weight: bold;
 	border-radius: 50px;
@@ -92,6 +93,6 @@
 	border-style: none;
 }
 
- .itemNI .bottomCardNI .centerContentNI button:hover{
+ .itemNI .bottomCardNI .centerContentNI a:hover{
 	color:   #18860e ;
 }

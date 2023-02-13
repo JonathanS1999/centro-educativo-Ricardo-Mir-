@@ -43,7 +43,7 @@ if(isset($_POST['btn'])){
 
     if($tipo_imagen=="image/jpeg" || $tipo_imagen=="image/jpg" || $tipo_imagen=="image/png" || $tipo_imagen=="image/gif"){
 
-    if ($tam_imagen < 2000000){
+    if ($tam_imagen < 5000000){
         $carpetaDestino = $_SERVER['DOCUMENT_ROOT'] . '/centroEdu/centro-educativo-Ricardo-Mir-/images/galeria/';
             $img_url = $carpetaDestino . $nombre_imagen;
         move_uploaded_file($_FILES['imagen']['tmp_name'], $img_url);

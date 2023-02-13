@@ -11,18 +11,16 @@
 
 
 
-
 <?php
      include("../../database/ParameterConection.php");
     class ViewImagesInGalery extends  ParameterConection {
 
-      function getImages(){
+      function getImages($sql){
 
           try {
             
                $conection = new PDO('mysql:host='. self::$host. '; dbname='.self::$database , self::$user_db, self::$paswword);
                $conection->exec('SET CHARACTER SET UTF8');
-               $sql = 'SELECT * FROM photos;';
                $result = $conection->prepare($sql);
                $result->execute();
 			         $count=$result->rowCount();
@@ -59,7 +57,31 @@
     }
     
     $viewImages=new ViewImagesInGalery();
-    $viewImages->getImages();
+    if(isset($_GET["tg"])){
+      $tipoGaleria=$_GET["tg"];
+      $sql="";
+      switch($tipoGaleria){
+        case 1 : 
+                echo "<div class='menuGalery'>
+                     <a class='centerNOW' href='reciberOptionsMenu.php?view=2&op=ga&tg=1'> Nuestras instalaciones </a>
+                     <a class='center' href='reciberOptionsMenu.php?view=2&op=ga&tg=2'> Fotos  </a>
+                     <a class='center' href='#'> Videos </a>
+                     </div>";
+                $sql="SELECT * FROM instalaciones";
+                 $viewImages->getImages($sql);
+                break;
+        default :
+                  echo "<div class='menuGalery'>
+                  <a class='center' href='reciberOptionsMenu.php?view=2&op=ga&tg=1'> Nuestras instalaciones </a>
+                  <a class='centerNOW' href='reciberOptionsMenu.php?view=2&op=ga&tg=2'> Fotos  </a>
+                  <a class='center' href='#'> Videos </a>
+                  </div>";
+                 $sql="SELECT * FROM photos";
+                 $viewImages->getImages($sql);
+                 break;
+      }
+    }
+
     
     ?>
     

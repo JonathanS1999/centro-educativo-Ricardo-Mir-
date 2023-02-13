@@ -19,26 +19,83 @@
 ?>
 
 <?php
-$arrayImg=array($prevPath."images/autoridades/director.PNG",$prevPath."images/autoridades/subDirectorTecnicoDocente.PNG",
-	$prevPath."images/autoridades/subDirectorTecnicoAdministrativo.PNG");
-$arrayNames=array("Yeneyra Dominguez","Dania Cebrián","Miroslava Zambrano");
-$arrayCargo=array("Director","Subdirector tecnico docente ","Subdirector tecnico  administrativo");
-$item=rand(0,3);
-for($i=0 ; $i < count($argAutorities); $i++ ){
 
-?>
+if (!class_exists('ParameterConection')) {
+    include("../../database/ParameterConection.php");
+}
 
-<div class="card">
-		<img src="<?php echo "". $arrayImg[$argAutorities[$i]]; ?>"/>
-		<h4><?php echo "". $arrayNames[$argAutorities[$i]]; ?></h4>
-		<h5><?php echo "". $arrayCargo[$argAutorities[$i]]; ?></h5>
-</div>
+class ViewAutorities extends  ParameterConection {
 
-<?php
+  function getAutorities($prevPath){
+
+	  try {
+		
+		   $conection = new PDO('mysql:host='. self::$host. '; dbname='.self::$database , self::$user_db, self::$paswword);
+		   $conection->exec('SET CHARACTER SET UTF8');
+		   $sql = 'SELECT * FROM autoridades;';
+		   $result = $conection->prepare($sql);
+		   $result->execute();
+		   $count=$result->rowCount();
+
+		   if ( $count ==0){
+			echo " <h3> No hay autoridades para mostrar </h3>";
+		   } else {
+		  
+		   while ($autorities = $result->fetch(PDO::FETCH_ASSOC)){
+			?>
+
+			<div class="card">
+					<img src=<?php echo "'".$prevPath."".$autorities["image_url"]."'"; ?>/>
+					<h4><?php echo "".$autorities["cargo"].""; ?></h4>
+					<h5><?php echo "".$autorities["nombre"].""; ?></h5>
+			</div>
+			
+			<?php
+			
+			}
+
+		   }
+		  
+
+		  
+	   }catch(Exception $e){
+		   die("error ".$e->getMessage());
+	   }finally{
+		   $conection = null;
+	   }
+
+  }
 
 }
 
+
+$viewAutorities=new ViewAutorities();
+$viewAutorities->getAutorities($prevPath);
+
+
+
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

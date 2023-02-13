@@ -5,7 +5,7 @@ include("ParameterConection.php");
 class SubirData extends ParameterConection{
 
 
-    function setDataServer($url_image, $title, $description){
+    function setDataServer($url_image, $title, $description , $tipo){
 
         
         try {
@@ -14,11 +14,11 @@ class SubirData extends ParameterConection{
 
             $conection->exec('SET CHARACTER SET UTF8');
 
-            $sql = 'insert into dataproyectnotices(image_url, title , description) values ( ? , ? , ? );';
+            $sql = 'insert into dataproyectnotices(image_url, title , description , tipo ) values ( ? , ? , ? , ?);';
 
             $result = $conection->prepare($sql);
 
-            $result->execute(array($url_image, $title, $description));
+            $result->execute(array($url_image, $title, $description, $tipo));
 
             echo " se ha insertado con exito ";
             
@@ -43,12 +43,12 @@ if(isset($_POST['btn'])){
 
     if($tipo_imagen=="image/jpeg" || $tipo_imagen=="image/jpg" || $tipo_imagen=="image/png" || $tipo_imagen=="image/gif"){
 
-    if ($tam_imagen < 2000000){
+    if ($tam_imagen < 5000000){
         $carpetaDestino = $_SERVER['DOCUMENT_ROOT'] . '/centroEdu/centro-educativo-Ricardo-Mir-/images/notices/';
             $img_url = $carpetaDestino . $nombre_imagen;
         move_uploaded_file($_FILES['imagen']['tmp_name'], $img_url);
         $subirDatos = new SubirData();
-        $subirDatos->setDataServer("images/notices/".$nombre_imagen, $title, $description ); 
+        $subirDatos->setDataServer("images/notices/".$nombre_imagen, $title, $description , $op); 
 
     }else{
         echo " la imagen es demasiado grande";

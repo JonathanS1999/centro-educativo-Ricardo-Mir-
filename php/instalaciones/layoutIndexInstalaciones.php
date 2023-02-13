@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/instalaciones/layoutIndexInstalaciones.css">
 </head>
 <body>
-
+<script src="js/eventBtnInsta.js"></script>
 	<div class="containerLayoutIndexInstalaciones1">
 
 	<div class="containerLayoutIndexInstalaciones2">
@@ -35,7 +35,7 @@
 						</div>
 
 						<div class="centerInfoIndIns">
-							<div><button> + Ver mas </button></div>
+							<div><button id="btnInstalaciones"> + Ver mas </button></div>
 						</div>
 
 				</div>

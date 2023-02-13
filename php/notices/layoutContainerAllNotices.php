@@ -11,12 +11,12 @@
 
     <?php
     $showAllNotices=true;
-   /*
-    include("ParameterConection.php");
+   
+    include("../../database/ParameterConection.php");
 
-    class ViewNotices extends  ParameterConection {
+    class ViewNoticesAll extends  ParameterConection {
 
-      function getNoytices(){
+      function getNoytices($sql){
 
           try {
 
@@ -24,16 +24,29 @@
                $conection = new PDO('mysql:host='. self::$host. '; dbname='.self::$database , self::$user_db, self::$paswword);
    
                $conection->exec('SET CHARACTER SET UTF8');
-   
-               $sql = 'SELECT * FROM dataproyectnotices;';
+
    
                $result = $conection->prepare($sql);
    
                $result->execute();
-   
+
+               $arrayDiv=array( "<div class='layoutContainerAllNotices'>", "</div>");
+               echo $arrayDiv[0];
+
+               $count=0;
+               $index=2;
+
                while ($notices = $result->fetch(PDO::FETCH_ASSOC)){
-                   echo "url= ".$notices['image_url'];
+                   if($count==3){
+                    echo $arrayDiv[1];
+                    echo $arrayDiv[0];
+                    $count=0;
+                   }
+                   include("../notices/itemCardNotice.php");
+                   $count++;
                }
+
+               echo $arrayDiv[1];
    
               
            }catch(Exception $e){
@@ -47,41 +60,19 @@
     }
     
 
-    $viewNotices=new ViewNotices();
-    $viewNotices->getNoytices();
-
-    echo "<h2> si pasa por aqui noticias </h2>";
-    */
+    $viewNotices=new ViewNoticesAll();
+    $sql="";
+    if($opt=="pr"){
+        $sql='SELECT * FROM dataproyectnotices where tipo=1;';
+        $viewNotices->getNoytices($sql);
+    }else{
+        $sql='SELECT * FROM dataproyectnotices where tipo=0;';
+        $viewNotices->getNoytices($sql);
+    }
+    
     ?>
 
-    <div class="layoutContainerAllNotices">
-        <?php
-        include("../notices/itemCardNotice.php");
-        include("../notices/itemCardNotice.php");
-        include("../notices/itemCardNotice.php");
-        include("../notices/itemCardNotice.php");
-        ?>
-   </div> 
 
-   
-   <div class="layoutContainerAllNotices">
-        <?php
-        include("../notices/itemCardNotice.php");
-        include("../notices/itemCardNotice.php");
-        include("../notices/itemCardNotice.php");
-        include("../notices/itemCardNotice.php");
-        ?>
-   </div>
-
-   
-   <div class="layoutContainerAllNotices">
-        <?php
-        include("../notices/itemCardNotice.php");
-        include("../notices/itemCardNotice.php");
-        include("../notices/itemCardNotice.php");
-        include("../notices/itemCardNotice.php");
-        ?>
-   </div>
     
 </body>
 </html>

@@ -24,7 +24,13 @@ if (isset($_GET["op"]) ) {
 
 	$arrayPATHName = getPathName($opt);
 	$arrayPATH=getPath($opt);
-	include("layoutPortadaMenu/portada.php");
+
+	if(!isset($_GET["id"])){
+		$isChangePort=false;
+		echo " si pasa por donde no debe pasar";
+		include("layoutPortadaMenu/portada.php");
+	}
+	
 }
 ?>
 <?php
@@ -49,6 +55,12 @@ if(isset($_GET["op"])){
 			case "nt":
 				include("../notices/layoutContainerAllNotices.php");
 				break;
+			case "pr":
+				include("../notices/layoutContainerAllNotices.php");
+				break;
+			case "ntdt":
+					include("../notices/detailsNotices.php");
+					break;
 			case "ad":
 				include("../admision/admision.php");
 				break;

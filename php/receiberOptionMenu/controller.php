@@ -18,11 +18,17 @@
         case "nt":
                 $arrayPATHName= array("/ Noticias");
             break;
+        case "pr":
+                $arrayPATHName= array("/ Noticias");
+            break;
         case "ad":
                 $arrayPATHName= array("/ Adimisión");
             break;
         case "ga":
                 $arrayPATHName= array("/ Galeria ");
+            break;
+        case "ntdt":
+                $arrayPATHName= array("/ noticias ");
             break;
         
      }
@@ -53,6 +59,12 @@
             break;
         case "ga":
                 $arrayPATH = array("reciberOptionsMenu.php?view=2&op=ga");
+            break;
+        case "ntdt":
+                $arrayPATH = array("reciberOptionsMenu.php?view=2&op=ntdt");
+            break;
+        case "pr":
+                $arrayPATH = array("reciberOptionsMenu.php?view=2&op=pr");
             break;
      }
 

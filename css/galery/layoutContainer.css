@@ -5,3 +5,37 @@ flex-direction: row;
 background: rgb(238, 234, 241);
 padding: 3%;
 }
+
+.menuGalery{
+    display: flex;
+    flex-direction: row;
+    align-content: space-evenly;
+}
+
+.menuGalery .center{
+    margin: auto;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 4px solid white;
+}
+
+
+
+.menuGalery .centerNOW{
+    margin: auto;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 4px solid rgb(199, 10, 114);
+}
+
+.menuGalery .centerNOW:hover{
+    color: rgb(19, 8, 136);
+    border-bottom: 4px solid rgb(226, 50, 147);
+}
+
+.menuGalery .center:hover{
+    border-bottom: 4px solid rgb(199, 10, 114);
+    color: rgb(5, 2, 39);
+}
