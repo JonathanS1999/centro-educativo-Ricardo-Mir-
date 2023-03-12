@@ -12,9 +12,13 @@
     <?php
     $showAllNotices=true;
    
-    include("../../database/ParameterConection.php");
+    if (!class_exists('ParameterConection')){
+        include("../../database/ParameterConection.php");
+    }
 
     class ViewNoticesAll extends  ParameterConection {
+
+        private static $ADMIN=false;
 
       function getNoytices($sql){
 
@@ -35,13 +39,16 @@
 
                $count=0;
                $index=2;
-
+               $admin=ViewNoticesAll::$ADMIN;
                while ($notices = $result->fetch(PDO::FETCH_ASSOC)){
                    if($count==3){
                     echo $arrayDiv[1];
                     echo $arrayDiv[0];
                     $count=0;
                    }
+                   
+                   $linkEdit="'../databaseForm/subirDataForm.php?op=0&update=".$notices['id']."'";
+                   $linkDelete="'../databaseForm/subirDataForm.php?op=0&del=".$notices['id']."'";
                    include("../notices/itemCardNotice.php");
                    $count++;
                }
@@ -56,16 +63,27 @@
            }
 
       }
+
+       function setAdmin($admin){
+        ViewNoticesAll::$ADMIN=$admin;
+      }
     
     }
     
 
     $viewNotices=new ViewNoticesAll();
     $sql="";
+
     if($opt=="pr"){
         $sql='SELECT * FROM dataproyectnotices where tipo=1;';
+        if(isset($admin)){
+            $viewNotices->setAdmin($admin);
+        }
         $viewNotices->getNoytices($sql);
     }else{
+         if(isset($admin)){
+             $viewNotices->setAdmin($admin);
+         }
         $sql='SELECT * FROM dataproyectnotices where tipo=0;';
         $viewNotices->getNoytices($sql);
     }

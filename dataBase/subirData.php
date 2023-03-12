@@ -1,6 +1,7 @@
 <?php
-
-include("ParameterConection.php");
+if (!class_exists('ParameterConection')){
+    include("ParameterConection.php");
+}
 
 class SubirData extends ParameterConection{
 
@@ -20,7 +21,6 @@ class SubirData extends ParameterConection{
 
             $result->execute(array($url_image, $title, $description, $tipo));
 
-            echo " se ha insertado con exito ";
             
             
         }catch(Exception $e){

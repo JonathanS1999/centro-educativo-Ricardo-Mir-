@@ -19,9 +19,9 @@
 	<img src=
 	<?php
 	if ($isChangePort){
-		echo "../../".$noticeDetail["image_url"];
+		echo "'../../".$noticeDetail["image_url"]."'";
 	}else{
-		echo "../../images/portada2.jpg";
+		echo "'../../images/portada2.jpg'";
 	}
 	
 	?>>

@@ -1,6 +1,8 @@
 <?php
 
-include("ParameterConection.php");
+if (!class_exists('ParameterConection')){
+    include("ParameterConection.php");
+}
 
 class SubirData extends ParameterConection{
 

@@ -10,7 +10,7 @@ $(document).ready(function(){
     });
 
     $("#itemCard2").click( function (ev){
-        location.href="../databaseForm/subirImagesGalery.php";
+        location.href="../databaseForm/subirImagesGalery.php?tg=0";
     });
 
     $("#itemCard3").click( function (ev){

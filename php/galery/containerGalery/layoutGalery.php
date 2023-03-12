@@ -12,8 +12,12 @@
 
 
 <?php
+if (!class_exists('ParameterConection')){
      include("../../database/ParameterConection.php");
+}
     class ViewImagesInGalery extends  ParameterConection {
+
+      private static $ADMIN=false;
 
       function getImages($sql){
 
@@ -28,6 +32,9 @@
               echo " <div class='layoutGaleryMenu'>";
 
                $increment = 0;
+
+               $admin=ViewImagesInGalery::$ADMIN;
+               $index=2;
          
                while ($notices = $result->fetch(PDO::FETCH_ASSOC)){
 
@@ -36,7 +43,8 @@
                   echo " <div class='layoutGaleryMenu'>";
                     $increment = 0;
                 }
-
+                $linkEdit="'../databaseForm/subirImagesGalery.php?tg=0&update=".$notices['id']."'";
+                $linkDelete="'../databaseForm/subirImagesGalery.php?tg=0&del=".$notices['id']."'";
                 include("../galery/containerGalery/itemGalery.php");
                 $increment++;
 
@@ -54,12 +62,22 @@
                $conection = null;
            }
       }
+
+      function setAdmin($admin){
+        ViewImagesInGalery::$ADMIN=$admin;
+      }
+
     }
     
     $viewImages=new ViewImagesInGalery();
     if(isset($_GET["tg"])){
       $tipoGaleria=$_GET["tg"];
       $sql="";
+
+        if(isset($admin)){
+          $viewImages->setAdmin($admin);
+        }
+
       switch($tipoGaleria){
         case 1 : 
                 echo "<div class='menuGalery'>

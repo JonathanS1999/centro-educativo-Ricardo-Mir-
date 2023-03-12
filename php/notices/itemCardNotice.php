@@ -68,9 +68,29 @@
 											 echo "'php/receiberOptionMenu/reciberOptionsMenu.php?view=1&op=ntdt&id=".$notices['id']."'";
 										      }
 										  ?>> 
-												Continuar leyendo
+
+										  <?php
+										  if(isset($admin)){
+										  if(!$admin){
+											echo "Continuar leyendo";
+										  }
+										}else{
+											echo "Continuar leyendo";
+										}
+												
+												?>
 											</a>
 										</div>
+
+										<?php
+										if(isset($admin)){
+										if($admin){
+											include("optionsItemAdminin.php");
+										}
+									    }
+								   		?>
+
+										
 						    </div>
 				
     </div>
