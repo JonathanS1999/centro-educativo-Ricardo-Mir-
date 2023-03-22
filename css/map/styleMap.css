@@ -1,0 +1,8 @@
+.containerMap{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
+.containerMap .map{
+margin: auto;
+}

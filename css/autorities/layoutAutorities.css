@@ -24,3 +24,9 @@ padding-bottom: 2%;
 	align-content: space-evenly;
 	margin: 0px auto;
 }
+
+@media (max-width:800px){
+	.containercard{
+		overflow: scroll;
+	}
+}

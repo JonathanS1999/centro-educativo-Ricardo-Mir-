@@ -6,110 +6,34 @@
     <title>subir data </title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css'  href='../../css/styleformAdmin/styleForm.css'>
+    <script type="text/javascript" src="../../jquery/jquery-3.6.0.js"></script>
+    <script type="text/javascript" src="../../js/eventEditGalery.js"></script>
 </head>
 <body>
-<?php
-if(isset($_GET['tg'])){
- $tg=$_GET['tg'];
-}
 
-$updateUrl="";
- if(isset($_GET["update"])){
-    $idUpdate=$_GET["update"];
-    include("../../dataBase/getDataForID.php");
-    $getData= new GetDataForID();
-    $sql="SELECT * FROM PHOTOS WHERE ID=?;";
-    $getData->consultDataServer($idUpdate,$sql);
-    $updateUrl="setUpdate=".$idUpdate;
- }
-
-?>
 <div class="containerForm">
 
-<div class="centerTitle" > <h3> Editar imagenes de galeria </h3> </div>
+<div class="centerTitle" > <h3> Editar galeria </h3> </div>
 
 <div class="containerForm2">
 
-<form class="form" action=<?php echo "'subirImagesGalery.php?tg=".$tg."&".$updateUrl."'"; ?> method="post" enctype="multipart/form-data">
-    <table>
-        <tr>
-        <td>
-            <label for="imagen" >Imagen</label> 
-            <?php
-            if(isset($getData)){
-                echo "<img src='../../".$getData->getImage()."' class='imageUpdate' />";
-            }
-            ?>
-            <input type="file" name="imagen"  <?php
-                                                if(!isset($getData)){
-                                                    echo 'required="required"';
-                                                }  ?>/>  
-        </td>
-        </tr>
-
-
-        <tr>
-        <td>
-            <div>
-            <label> titulo </label> </br>
-            <input type="text"  required="required" name="title" value=<?php
-            if(isset($getData)){
-            echo "'".$getData->getTitle()."'";
-             }
-             else{
-                echo "''";
-             }
-             ?>/>
-            </div>
-        </td>
-        </tr>
-
-        <tr>
-        <td>
-            <div>
-            <label> descripción </label> </br>
-            <textarea name="areatexto"  required="required" ><?php if(isset($getData)){ echo "".$getData->getNotice(); }?></textarea>
-            </div>
-        </td>
-        </tr>
+<form class="form" action="#" method="post" id="form" enctype="multipart/form-data">
+    <table id="table">
             
         <tr>
             <td>
-            <input class="btnForm" type="submit" value="publicar" name="btn"/> 
+            <input class="btnForm" type="button" value="publicar" name="btn" id="button"/> 
             </td> 
         </tr>
     
-
     </table>
 </form>
 </div>
 
-<?php
-if(!isset($_GET['setUpdate'])){
-include("../../dataBase/subirImagesGalery.php");
-}else{
-    $table="photos";
-    include("../../dataBase/UpdateDataId.php");
-}
-?>
+    <div id="container">
 
-<?php
-if(isset($_GET['del'])){
+    </div>
 
-    $delID=$_GET["del"];
-    include("../../dataBase/deleteData.php");
-    $deleteData=new DeleteData();
-    $sql1='SELECT * FROM photos where id=?;';
-    $sql2='delete from photos where id=?';
-    $deleteData->setDeleteDataServer($delID,$sql1,$sql2);
-
-}
-?>
-
-<?php
-$admin=true;
-include("../galery/containerGalery/layoutGalery.php");
-?>
 </div>
 </body>
 </html>

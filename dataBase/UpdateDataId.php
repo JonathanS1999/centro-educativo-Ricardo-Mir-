@@ -10,9 +10,8 @@ class UpdateData extends ParameterConection{
     }
 
 
-    function updateDataServerText( $title, $description , $id){
+    function updateDataServerText( $atr1, $atr2 , $id){
 
-        
         try {
             
             $conection = new PDO('mysql:host='. self::$host. '; dbname='.self::$database , self::$user_db, self::$paswword);
@@ -23,9 +22,8 @@ class UpdateData extends ParameterConection{
 
             $result = $conection->prepare($sql);
     
-            $result->execute(array( $title, $description, $id));
+            $result->execute(array($atr1, $atr2, $id));
            
-            
         }catch(Exception $e){
             die("error ".$e->getMessage());
         }finally{
@@ -36,7 +34,7 @@ class UpdateData extends ParameterConection{
 
 
 
-    function updateDataServerImage($url_image, $title, $description , $id){
+    function updateDataServerImage($url_image, $title, $description , $id ){
 
         
         try {
@@ -58,6 +56,29 @@ class UpdateData extends ParameterConection{
             $conection = null;
         }
         
+    }
+
+
+    function updateDataServerTag($id,$tag){
+
+        try {
+            
+            $conection = new PDO('mysql:host='. self::$host. '; dbname='.self::$database , self::$user_db, self::$paswword);
+
+            $conection->exec('SET CHARACTER SET UTF8');
+
+            $sql = "update $this->table set link=? where id=?;";
+
+            $result = $conection->prepare($sql);
+    
+            $result->execute(array( $tag, $id));
+           
+        }catch(Exception $e){
+            die("error ".$e->getMessage());
+        }finally{
+            $conection = null;
+        }
+
     }
 
 
@@ -86,16 +107,24 @@ class UpdateData extends ParameterConection{
 
 }
 
-if(isset($_GET['setUpdate'])){
+if(isset($_POST['id'])){
+    $actualizarDatos = new UpdateData($table);
+    $id=$_POST['id'];
 
+    if(!isset($tg)){
+        $tg=-1;
+    }
+
+    if($tg==2){
+        $tag = $_POST['areatexto'];
+        $actualizarDatos->updateDataServerTag($id,$tag);
+    }else{
     $nombre_imagen = $_FILES['imagen'] ['name'];
     $tipo_imagen = $_FILES['imagen']['type'];
     $tam_imagen = $_FILES['imagen']['size'];
     $title = $_POST['title'];
     $description = $_POST['areatexto'];
-    $id=$_GET['setUpdate'];
 
-    $actualizarDatos = new UpdateData($table);
 
     if(!strcmp($nombre_imagen,"")){
 
@@ -111,8 +140,7 @@ if(isset($_GET['setUpdate'])){
                 $carpetaDestino = $_SERVER['DOCUMENT_ROOT'] . '/centroEdu/centro-educativo-Ricardo-Mir-/images/notices/';
                     $img_url = $carpetaDestino . $nombre_imagen;
                 move_uploaded_file($_FILES['imagen']['tmp_name'], $img_url);
-                
-                $actualizarDatos->updateDataServerImage("images/notices/".$nombre_imagen, $title, $description , $id); 
+                $actualizarDatos->updateDataServerImage("images/notices/".$nombre_imagen, $title, $description , $id ); 
         
             }else{
                 echo " la imagen es demasiado grande";
@@ -121,7 +149,7 @@ if(isset($_GET['setUpdate'])){
             echo " por favor  selecciona una imagen";
          }
     }
-
+}
 }
 
 ?>

@@ -33,10 +33,9 @@ if (!class_exists('ParameterConection')){
                     
                     include("layoutPortadaMenu/portada.php");
                     echo "<div class='containerHistory'>";
-                    echo "  <div class='. titleHistory'>
+                    echo "<div class='. titleHistory'>
                     <h4> " . $noticeDetail["title"] . "</h4>
                     </div>";
-
 
                    echo " <div class='msjContent'>
                    <p> ".$noticeDetail["description"] ."</p> </div>";

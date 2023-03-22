@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-content: flex-start;
-    margin: auto;
+    margin: 6px auto auto auto;
     width: 250px;
 }
 
@@ -22,6 +22,7 @@
     margin:8px 0px 0px 0px;
 }
 
+
 .itemGaleryContainer .optionsAdmin{
     display: flex;
     flex-direction: row;
@@ -31,13 +32,30 @@
 .itemGaleryContainer .optionsAdmin .alignRightIcons{
     margin-right: 0px;
     margin-left: auto;
-    background-color: #f5bbf5;
+	display: flex;
+	flex-direction: row;
 }
 
-.itemGaleryContainer .optionsAdmin .alignRightIcons .iconAdmin img{
-    width: 40px;
+.itemGaleryContainer  .optionsAdmin .alignRightIcons .iconAdminE{
+	border-style: none;
+	margin: 2px 4px 2px 4px;
+	width: 40px;
     height: 40px;
-    margin-right: 8px;
+	background: url('../../images/icons/editar.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-radius: 50%;
+    cursor: pointer;
+}
+
+.itemGaleryContainer  .optionsAdmin .alignRightIcons .iconAdminD{
+	border-style: none;
+	margin: 2px 4px 2px 4px;
+	width: 40px;
+    height: 40px;
+	background: url('../../images/icons/eliminar.png');
+	background-repeat: no-repeat;
+	background-size: cover;
     border-radius: 50%;
     cursor: pointer;
 }

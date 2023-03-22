@@ -95,3 +95,15 @@
 	color: rgba( 3, 19, 221 ,0.8);
 	text-decoration: underline;
 }
+
+@media (max-width:800px){
+	.popup-out-window{
+		background-color: rgba(71, 64, 64, 0.8);
+	}
+	.popup-container{
+		width: 100%;
+		left: 0;
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+}

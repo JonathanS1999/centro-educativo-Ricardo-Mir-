@@ -42,8 +42,6 @@ if( isset($_POST["user"])){
     $passw = $_POST["password"];
     IniciarSesion::verifiPaswd($user,$passw);
 
-} else {
-    echo " se ha entrado por primera vez";
-}
+} 
 
 ?>

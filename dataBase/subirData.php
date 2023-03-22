@@ -15,7 +15,7 @@ class SubirData extends ParameterConection{
 
             $conection->exec('SET CHARACTER SET UTF8');
 
-            $sql = 'insert into dataproyectnotices(image_url, title , description , tipo ) values ( ? , ? , ? , ?);';
+            $sql = 'insert into dataproyectnotices (image_url, title , description , tipo ) values ( ? , ? , ? , ?);';
 
             $result = $conection->prepare($sql);
 

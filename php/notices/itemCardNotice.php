@@ -13,7 +13,7 @@
 	<link rel="stylesheet" type="text/css" href=<?php echo '"'.$varUrlMV.'css/notices/itemCardNotice.css"';?>>
 </head>
 <body>
-	<div class="itemNI">
+	<div class="itemNI" id=<?php echo "'".$id."'"; ?>>
 
 							<div class="topContentNI">
 								<img src=<?php echo "'".$varUrlMV."".$notices['image_url']."'"; ?> />

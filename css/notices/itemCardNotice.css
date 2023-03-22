@@ -104,15 +104,39 @@ align-content: center;
 }
 
 .itemNI .optionsAdmin .alignRightIcons{
-margin-right: 0px;
-margin-left: auto;
-background-color: #f5bbf5;
+    margin-right: 0px;
+    margin-left: auto;
+	display: flex;
+	flex-direction: row;
 }
 
-.itemNI .optionsAdmin .alignRightIcons .iconAdmin img{
-width: 40px;
-height: 40px;
-margin-right: 8px;
-border-radius: 50%;
-cursor: pointer;
+.itemNI .optionsAdmin .alignRightIcons .iconAdminE{
+	border-style: none;
+	margin: 2px 4px 2px 4px;
+	width: 40px;
+    height: 40px;
+	background: url('../../images/icons/editar.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-radius: 50%;
+    cursor: pointer;
+}
+
+.itemNI .optionsAdmin .alignRightIcons .iconAdminD{
+	border-style: none;
+	margin: 2px 4px 2px 4px;
+	width: 40px;
+    height: 40px;
+	background: url('../../images/icons/eliminar.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+@media (max-width:800px){
+	.itemNI{
+		margin-top: 20px;
+	}
 }

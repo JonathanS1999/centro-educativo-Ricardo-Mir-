@@ -4,6 +4,18 @@
 	justify-content: space-around ;
 }
 
+
+
+.myfooter .itemFooter .container-icons{
+	display: flex;
+	flex-direction: row;
+	align-content: space-evenly;
+}
+
+.myfooter .itemFooter .container-icons .center-icons{
+	margin: auto;
+}
+
 .fontWhite{
 	color: white;
 }
@@ -41,4 +53,22 @@
 
 .mineducMargin{
 	margin: 3px;
+}
+
+@media (max-width:800px){
+	.myfooter{
+		flex-direction: column;
+		padding: 15px;
+	}
+	.myfooter .itemFooter h4 , .myfooter .itemFooter h5{
+		text-align: center;
+	}
+
+	.myfooter .center-icons{
+		margin: auto;
+	}
+
+	.myfooter .divMinEd{
+		margin-top: 15px;
+	}
 }

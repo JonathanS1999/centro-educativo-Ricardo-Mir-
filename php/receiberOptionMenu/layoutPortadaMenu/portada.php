@@ -16,12 +16,11 @@
 	<div class="topPortada">
 	</div>
 
-	<img src=
-	<?php
+	<img src=<?php
 	if ($isChangePort){
 		echo "'../../".$noticeDetail["image_url"]."'";
 	}else{
-		echo "'../../images/portada2.jpg'";
+		echo "'../../images/galeria/img1er.jpg'";
 	}
 	
 	?>>

@@ -19,14 +19,14 @@
 <!-- Pie de pagina , muestra informacion general del centro educativo -->
 
 <footer class="myfooter fontWhite">
-	<div>
-		<h4>C E B G Ricardo Miro</h4>
+	<div class="itemFooter">
+		<h4>C E B G Ricardo Miró</h4>
 		<h5>Administradores</h5>
 		<h5>Nuestra historia</h5>
 		<h5>Logros</h5>
 		<h5>Proyectos</h5>
 	</div>
-	<div>
+	<div class="itemFooter">
 		<h4>Contacto</h4>
 		<h5>Direccion: Calle segunda Vista Hermosa,<br/> Corregimiento de Pueblo Nuevo ,<br/> detras del KFC 
 		    de transistmica al frente de Auto Centro</h5>
@@ -34,11 +34,15 @@
 		<h5>517-6476</h5>
 		<h5>xxxx-xxxx</h5>
 	</div>
-	<div>
+	<div class="itemFooter">
 		<h4>Redes Sociales</h4>
-		<img class="icons" src=<?php echo '"' . $urlNav . 'images/rsocial/facebook.webp"'; ?> />
-		<img class="icons" src=<?php echo '"' . $urlNav . 'images/rsocial/instagram.webp"'; ?> />
-		<img class="icons" src=<?php echo '"' . $urlNav . 'images/rsocial/youtube.png"'; ?> />
+		<div class="container-icons">
+			<div class="center-icons">
+				<img class="icons" src=<?php echo '"' . $urlNav . 'images/rsocial/facebook.webp"'; ?> />
+				<img class="icons" src=<?php echo '"' . $urlNav . 'images/rsocial/instagram.webp"'; ?> />
+				<img class="icons" src=<?php echo '"' . $urlNav . 'images/rsocial/youtube.png"'; ?> />
+			</div>
+        </div>
 	</div>
 
 	<div class="divMinEd">

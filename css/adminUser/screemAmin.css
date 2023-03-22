@@ -19,3 +19,9 @@
     flex-direction: row;
     align-content: space-evenly;
 }
+
+@media (max-width:800px){
+    .container_ADMIN .containerItemsAdmin{
+        flex-direction: column;
+    }
+}

@@ -10,3 +10,14 @@
     width: 80%;
     height: auto;
 }
+
+@media (max-width:800px){
+    .horarioEscolar{
+        height: 350px;
+    }
+    .horarioEscolar img{
+        margin: auto;
+        width: 100%;
+        height: 90%;
+    }
+}

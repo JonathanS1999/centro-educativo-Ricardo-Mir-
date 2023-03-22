@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/academicOffer/academicOfferIndex.css">
 </head>
 <body>
-
+<script src="js/eventsOfertAcademic.js"></script>
 	<div class="containerAcademicOfferIndex">
 
 
@@ -28,7 +28,7 @@
 										 	<p class="centerContentAO"> Educación pre escolar</p>	
 										</div>
 										<div class="centerContentAO">
-											<button> + ver mas</button>
+											<button id="preEscolarar"> + ver mas</button>
 										</div>
 						    </div>
 				
@@ -44,7 +44,7 @@
 										 	<p class="centerContentAO"> Educación primaria</p>	
 										</div>
 										<div class="centerContentAO">
-											<button> + ver mas</button>
+											<button id="primaria"> + ver mas</button>
 										</div>
 						    </div>
 				
@@ -60,7 +60,7 @@
 										 	<p class="centerContentAO"> Educación pre media ( 7° , 8° , 9° )</p>	
 										</div>
 										<div class="centerContentAO">
-											<button> + ver mas</button>
+											<button id="preMedia"> + ver mas</button>
 										</div>
 						    </div>
 				

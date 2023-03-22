@@ -34,13 +34,13 @@
         
 
             <?php 
-										if(isset($admin)){
-										if($admin){
-											include("../notices/optionsItemAdminin.php");
-										}
-									    }
+				if(isset($admin)){
+					if($admin){
+						include("../notices/optionsItemAdminin.php");
+						}
+				}
                                         
-								   		?>
+			?>
 
     </div>
 </body>

@@ -18,7 +18,7 @@
 <div class="slider-containerFP">
 
 	<div class="container-boxFP">
-	          <img src="images/portada2.jpg">
+	          <img src="images/portada2.PNG">
 	</div>
 
 	<div class="container-boxFP">

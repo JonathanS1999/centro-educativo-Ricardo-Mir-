@@ -16,9 +16,15 @@
 <?php
     $showAllNotices=true;
 	$notices;
-    include("database/ParameterConection.php");
+	if (!class_exists('ParameterConection')){
+    include("../../database/ParameterConection.php");
+	}
 
     class ViewNotices extends  ParameterConection {
+		private $cantNotices=3;
+		function setCantNotices($cant){
+			$this->cantNotices=$cant;
+		}
 
       function getNoytices(){
 
@@ -26,7 +32,7 @@
             
                $conection = new PDO('mysql:host='. self::$host. '; dbname='.self::$database , self::$user_db, self::$paswword);
                $conection->exec('SET CHARACTER SET UTF8');
-               $sql = 'SELECT * FROM dataproyectnotices where tipo=0;';
+               $sql = 'SELECT * FROM dataproyectnotices where tipo=0 order by id desc;';
                $result = $conection->prepare($sql);
                $result->execute();
 			   $count=$result->rowCount();
@@ -34,8 +40,10 @@
 			   if ( $count ==0){
 				echo " <h3> No hay noticias para mostrar </h3>";
 			   } else {
-			   $module=($count%3);
-			   $auxMas=(int)($count/3);
+			   $cantNoticeInContainer=$this->cantNotices;
+
+			   $module=($count%$cantNoticeInContainer);
+			   $auxMas=(int)($count/$cantNoticeInContainer);
 
 			   if ($module>0){
 				$auxMas++;
@@ -75,13 +83,14 @@
 			   $index=1;
                while ($notices = $result->fetch(PDO::FETCH_ASSOC)){
 
-				if ($count==3){
+				if ($count==$cantNoticeInContainer){
 					echo $arrayDiv[1];
 					echo $arrayDiv[0];
 					$count=0;
 				}
 
-				   include("php/notices/itemCardNotice.php");
+				$id=$notices["id"];
+				   include("../notices/itemCardNotice.php");
 
 				   $count++;
                }
@@ -113,6 +122,14 @@
     
 
     $viewNotices=new ViewNotices();
+	if(isset($_GET["cn"])){
+		$cantNotices=$_GET["cn"];
+		if($cantNotices<500){
+			$viewNotices->setCantNotices(1);
+		}else if($cantNotices<800){
+			$viewNotices->setCantNotices(2);
+		}
+	}
     $viewNotices->getNoytices();
 
     ?>

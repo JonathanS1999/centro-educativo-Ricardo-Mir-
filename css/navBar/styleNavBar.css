@@ -1,12 +1,8 @@
-.backgroundStileHead{
-}
-
 .backgroundStileHead .header{
 	width: 100%;
 	display: flex;
 	height: 60px;
 }
-
 
 .icons{
 	width: 40px;
@@ -26,6 +22,7 @@
 	margin-left: 1%;
 }
 
+
 .aligment .center-align{
 	margin: auto;
 	display: flex;
@@ -35,9 +32,6 @@
 
 .aligment .center-align .center-align-icon{
 	margin: auto;
-}
-
-.aligment .center-align .center-align2{
 }
 
 .aligment .center-align .center-align2 h5{
@@ -70,8 +64,26 @@
 
 .div2{
 	background-color: rgb(0, 0, 97);
-	display:flex ;
+	display:flex;
+	flex-direction: row;
 	align-items: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.div2 .div3{
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	margin-left: 3%;
+}
+
+
+.div2 .div3 .menuMovil{
+	width: 40px;
+	height: 40px ;
+	display: none;
+	border-radius: 6px;
 }
 
 .div2 nav {
@@ -81,6 +93,7 @@
 
 .div2 nav .menuNav{
 			display: flex;
+			flex-direction: row;
 			justify-content: space-between;	
 }
 
@@ -90,11 +103,11 @@
 			padding-left: 0px;
 }
 
-.logo{
+.div2 .div3 .logo{
 	width: 80px;
 	height: 80px ;
 	border-radius: 50%;
-	margin-left: 3%;
+	margin: auto;
 }
 
 .schoolTitle{
@@ -102,15 +115,30 @@
 	font-weight: bold;
 	color: white;
 	margin-left: 5px;
+	text-decoration: none;
 }
 
 .centerTitle{
-	margin: auto 0px auto 0px;
+	margin: auto;
+}
+.menuMovil{
+	margin: auto;
 }
 
 .li-a{
 	list-style: none;
+	position: relative;
 }
+
+.li-a a .despleg{
+	position: absolute;
+	right: 10%;
+	display: none;
+	background-image: url("../../images/icons/mostrarsubmenu.png");
+	background-size: cover;
+	background-repeat:no-repeat;
+}
+
 
 .li-a a {
 			text-decoration: none;
@@ -121,18 +149,78 @@
 			display: block;
 		}
 
-		.li-a a:hover{
+.li-a a:hover{
 			background: green;
-			border: 1px solid #ffb304;
 		}
 
-		.submenu{
+.submenu{
 			position: absolute;
 			display: none;
 		}
 
-		.li-a:hover > ul {
+.li-a:hover > ul {
 			display: block;
-			background: pink;
 			z-index: 50;
-		}
+}
+
+
+@media (max-width:800px){
+
+	.li-a a:hover{
+		background: none;
+		border: none;
+	}
+
+	.backgroundStileHead{
+		display: flex;
+		flex-direction: column;
+		height: auto;
+	}
+
+	.backgroundStileHead .header{
+		flex-direction: column;
+		height: auto;
+	}
+
+	.div2{
+		flex-direction: column;
+	}
+
+	.div2 .div3 .menuMovil{
+		display: flex;
+	}
+
+	#navContainer{
+		width: 100%;
+		background-color: rgb(0, 0, 97);
+		border: 1px solid rgb(224, 215, 196);
+		display: none;
+	}
+
+	.li-a a .despleg{
+		right: 10%;
+		display: inline;
+	}
+
+	.div2 .div3{
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%;
+	}
+
+	.div2 nav {
+		margin: 0;
+		width: 100%;
+	}
+
+	.div2 nav .menuNav{
+		flex-direction: column;
+		background-color: rgb(0, 0, 97);
+	}
+	.submenu{
+		position: relative;
+		display: none;
+		margin-left: 10%;
+	}
+
+}

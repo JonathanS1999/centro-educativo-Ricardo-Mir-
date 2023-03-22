@@ -25,11 +25,12 @@ if (!class_exists('ParameterConection')) {
 }
 
 class ViewAutorities extends  ParameterConection {
+	private static $ADMIN=false;
 
   function getAutorities($prevPath){
 
 	  try {
-		
+		   
 		   $conection = new PDO('mysql:host='. self::$host. '; dbname='.self::$database , self::$user_db, self::$paswword);
 		   $conection->exec('SET CHARACTER SET UTF8');
 		   $sql = 'SELECT * FROM autoridades;';
@@ -40,14 +41,29 @@ class ViewAutorities extends  ParameterConection {
 		   if ( $count ==0){
 			echo " <h3> No hay autoridades para mostrar </h3>";
 		   } else {
+
+			$admin=ViewAutorities::$ADMIN;
 		  
 		   while ($autorities = $result->fetch(PDO::FETCH_ASSOC)){
+			$id=$autorities['id'];
 			?>
 
-			<div class="card">
-					<img src=<?php echo "'".$prevPath."".$autorities["image_url"]."'"; ?>/>
+			<div class="card" id=<?php echo "'".$id."'"; ?>>
+					<img class="imgCard"src=<?php echo "'".$prevPath."".$autorities["image_url"]."'"; ?>/>
 					<h4><?php echo "".$autorities["cargo"].""; ?></h4>
 					<h5><?php echo "".$autorities["nombre"].""; ?></h5>
+					
+					<?php 
+					$linkEdit="'../databaseForm/subirAutorities.php?update=".$autorities['id']."'";
+					$linkDelete="'../databaseForm/subirAutorities.php?del=".$autorities['id']."'";
+					
+						if(isset($admin)){
+							if($admin){
+								$varUrlMV = "../../";
+								include("../notices/optionsItemAdminin.php");
+							}
+						}                        
+					?>
 			</div>
 			
 			<?php
@@ -55,8 +71,6 @@ class ViewAutorities extends  ParameterConection {
 			}
 
 		   }
-		  
-
 		  
 	   }catch(Exception $e){
 		   die("error ".$e->getMessage());
@@ -66,10 +80,17 @@ class ViewAutorities extends  ParameterConection {
 
   }
 
+  function setAdmin($admin){
+	ViewAutorities::$ADMIN=$admin;
+  }
+
 }
 
 
 $viewAutorities=new ViewAutorities();
+if(isset($admin)){
+	$viewAutorities->setAdmin($admin);
+}
 $viewAutorities->getAutorities($prevPath);
 
 

@@ -14,7 +14,7 @@
 			$urlNav="../../";
 			$urlLocal=$url;
 			$urlNavArray=array("../","../../");
-		   $varUrl=2;
+		    $varUrl=2;
 	}else{
 		if($index==1){// estoy en la pagina principal
 		$urlNav="";
@@ -26,11 +26,12 @@
 
 ?>
 	<link rel="stylesheet" type="text/css" 
-	href=<?php echo '"'.$urlNav. 'css/navBar/styleNavBar.css"' ?>>
+	href=<?php echo '"'.$urlNav. 'css/navBar/styleNavBar.css"'; ?>>
 	<title></title>
 </head>
 <body>
-	
+<script type="text/javascript" src=<?php echo '"'.$urlNav. 'jquery/jquery-3.6.0.js"'; ?>></script>
+<script src=<?php echo '"'.$urlNav. 'js/eventMenuNavMovil.js"'; ?>></script>
 <div class="backgroundStileHead">
 
 
@@ -115,47 +116,50 @@
 
 <div class="div2">
 
-<img class="logo" src=<?php echo '"' . $urlNav . 'images/insignia.png"'; ?>/>
+	<div class="div3">
 
-<div class="centerTitle" >
-   <h4 class="schoolTitle">C E B G <br/> Ricardo Miró</h4>
-</div>
+	<img class="logo" src=<?php echo '"' . $urlNav . 'images/insignia.png"'; ?>/>
+
+	<div class="centerTitle">
+	<a href= <?php echo '"' . $urlNavArray[1] . 'index.php"'; ?> class="schoolTitle">C E B G <br/>Ricardo Miró</a>
+	</div>
+
+	<img class="menuMovil" id="btnNav" src=<?php echo '"' . $urlNav . 'images/icons/menu.jpg"';?>/>
+
+	</div>
 
 <?php $urlOptionSelected='"' . $urlNavArray[0] . 'receiberOptionMenu/reciberOptionsMenu.php?view='.$varUrl;
 ?>
 
-<nav>
+<nav id="navContainer">
 	<ul class="menuNav">
 
-		<?php
-
-		 ?>
 		<li class="li-a"><a href= <?php echo '"' . $urlNavArray[1] . 'index.php"'; ?> >Inicio</a></li>
-		<li class="li-a"><a href="#">CEBG Ricardo M</a>
-			<ul class="submenu">
+		<li class="li-a"> <a href="#" class="am">CEBG Ricardo M <button id="desp1" class="despleg">.</button> </a> 
+			<ul class="submenu" id="subMenu1">
 				<li class="li-a"> <a href=<?php echo $urlOptionSelected.'&op=mv"'; ?>>Misión y Visión </a></li>
 				<li class="li-a"> <a href=<?php echo $urlOptionSelected.'&op=ht"'; ?>>Historia</a></li>
 				<li class="li-a"> <a href=<?php echo $urlOptionSelected.'&op=at"'; ?>>Autoridades</a></li>
-				<li class="li-a"> <a href=<?php echo '"' . $urlNavArray[0] . 'location.php"'; ?>>Ubicación</a></li>
+				<li class="li-a"> <a href=<?php echo $urlOptionSelected.'&op=mp"'; ?>>Ubicación</a></li>
 			</ul>
 		</li>
 		
-		<li class="li-a"><a href="#">Espacio Informativo</a>
-      <ul class="submenu">
+		<li class="li-a"><a href="#" class="am">Espacio Informativo <button id="desp2" class="despleg">. </button></a>
+      <ul class="submenu" id="subMenu2">
 				<li class="li-a"> <a href=<?php echo $urlOptionSelected.'&op=nt"'; ?>>Noticias</a></li>
 				<li class="li-a"> <a href=<?php echo $urlOptionSelected.'&op=pr"'; ?>>Proyectos</a></li>
 				<li class="li-a"> <a href=<?php echo $urlOptionSelected.'&op=nt"'; ?>>Póliza y seguro</a></li>
 			</ul>
 		</li>
-		<li class="li-a"><a href="#" >Oferta Academica</a>
-			<ul class="submenu">
+		<li class="li-a"><a href="#" class="am">Oferta Academica <button id="desp3" class="despleg">. </button></a>
+			<ul class="submenu" id="subMenu3">
 				<li class="li-a"> <a href=<?php echo $urlOptionSelected.'&op=ad"'; ?>>Admisión</a></li>
-				<li class="li-a"> <a href="#">Tramites de matricula</a></li>
+				<li class="li-a"> <a href="#">Tramites de matrícula</a></li>
 			</ul>
 
 		</li>
 		<li class="li-a"><a href= <?php echo $urlOptionSelected.'&op=co"'; ?>>Contactos</a></li>
-		<li class="li-a"><a href= <?php echo $urlOptionSelected.'&op=ga&tg=2"'; ?>>Galeria</a></li>
+		<li class="li-a"><a href= <?php echo $urlOptionSelected.'&op=ga&tg=0"'; ?>>Galeria</a></li>
 	</ul>
 </nav>
 

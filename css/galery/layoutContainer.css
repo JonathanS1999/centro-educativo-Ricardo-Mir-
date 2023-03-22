@@ -10,6 +10,7 @@ padding: 3%;
     display: flex;
     flex-direction: row;
     align-content: space-evenly;
+    width: 100%;
 }
 
 .menuGalery .center{
@@ -38,4 +39,19 @@ padding: 3%;
 .menuGalery .center:hover{
     border-bottom: 4px solid rgb(199, 10, 114);
     color: rgb(5, 2, 39);
+}
+
+@media (max-width:800px){
+    .layoutGaleryMenu{
+        flex-direction: column;
+    }
+    .menuGalery{
+        overflow-x: scroll;
+    }
+    .menuGalery .center{
+        font-size: 22px;
+    }
+    .menuGalery .centerNOW{
+        font-size: 22px;
+    }
 }

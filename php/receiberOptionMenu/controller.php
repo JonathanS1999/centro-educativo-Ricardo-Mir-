@@ -19,7 +19,7 @@
                 $arrayPATHName= array("/ Noticias");
             break;
         case "pr":
-                $arrayPATHName= array("/ Noticias");
+                $arrayPATHName= array("/ Proyectos");
             break;
         case "ad":
                 $arrayPATHName= array("/ Adimisión");
@@ -29,6 +29,18 @@
             break;
         case "ntdt":
                 $arrayPATHName= array("/ noticias ");
+            break;
+        case "oa1":
+                $arrayPATHName= array("/ oferta Académica - preescolar ");
+            break;
+        case "oa2":
+                $arrayPATHName= array("/ oferta Académica - primaria ");
+            break;
+        case "oa3":
+                $arrayPATHName= array("/ oferta Académica - premedia ");
+            break;
+        case "mp":
+                $arrayPATHName= array("/ localización");
             break;
         
      }
@@ -58,13 +70,25 @@
                 $arrayPATH = array("reciberOptionsMenu.php?view=2&op=ad");
             break;
         case "ga":
-                $arrayPATH = array("reciberOptionsMenu.php?view=2&op=ga");
+                $arrayPATH = array("reciberOptionsMenu.php?view=2&op=ga&tg=0");
             break;
         case "ntdt":
                 $arrayPATH = array("reciberOptionsMenu.php?view=2&op=ntdt");
             break;
         case "pr":
                 $arrayPATH = array("reciberOptionsMenu.php?view=2&op=pr");
+            break;
+        case "oa1":
+                $arrayPATH = array("reciberOptionsMenu.php?view=2&op=oa1&id=0");
+            break;
+        case "oa2":
+                $arrayPATH = array("reciberOptionsMenu.php?view=2&op=oa2&id=0");
+            break;
+        case "oa3":
+                $arrayPATH = array("reciberOptionsMenu.php?view=2&op=oa3&id=0");
+            break;
+        case "mp":
+                $arrayPATH = array("reciberOptionsMenu.php?view=2&op=mp");
             break;
      }
 

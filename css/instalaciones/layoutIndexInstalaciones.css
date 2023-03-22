@@ -42,6 +42,7 @@
 	margin: auto;
 	padding: 2%;
 }
+
 .containerLayoutIndexInstalaciones1 .containerLayoutIndexInstalaciones2 .containerLayoutInsideIndIns .descriptionInfoIndIns{
 	background: rgba( 1, 60, 71 , 1.0);
 	width: 40%;
@@ -83,4 +84,17 @@ margin: 0px 10px 0px 10px;
 	background:    #c6960c;
 	box-shadow: 1px 1px 5px 5px rgba(36, 33, 18, 0.7);
 	color:     #040f4b;
+}
+
+@media (max-width:720px){
+	.containerLayoutIndexInstalaciones1 .containerLayoutIndexInstalaciones2 .containerLayoutInsideIndIns {
+		flex-direction: column;
+	}
+	.containerLayoutIndexInstalaciones1 .containerLayoutIndexInstalaciones2 .containerLayoutInsideIndIns .descriptionInfoIndIns{
+	width: 100%;
+	}
+	.containerLayoutIndexInstalaciones1 .containerLayoutIndexInstalaciones2 .containerLayoutInsideIndIns .miniGaleryIndIns{
+		width: 90%;
+		overflow: scroll;
+	}
 }

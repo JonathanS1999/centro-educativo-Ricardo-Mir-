@@ -10,7 +10,7 @@
 <body>
 <div class="containerItemAdmin">
 <div class="insideContainerCardAdmin">
-    <img src="../../images/portada2.jpg"/>
+    <img src=<?php echo "'".$arrayIcons[$i]."'";?>/>
     <h4> <?php echo $arrayNameItems[$i]; ?></h4>
     <button id=<?php echo "'".$id."'"; ?> > editar </button>
 </div>

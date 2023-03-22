@@ -5,7 +5,6 @@ if (!class_exists('ParameterConection')){
 
 class DeleteData extends ParameterConection{
 
-
     function setDeleteDataServer($id,$sql1,$sql2){
         try {
 
@@ -26,6 +25,23 @@ class DeleteData extends ParameterConection{
 
             unlink("../../".$deleteUrlImage->getImage());
             
+        }catch(Exception $e){
+            die("error ".$e->getMessage());
+        }finally{
+            $conection = null;
+        }
+    }
+
+    function setDeleteInServer($id,$sql){
+        try {
+
+            $conection = new PDO('mysql:host='. self::$host. '; dbname='.self::$database , self::$user_db, self::$paswword);
+
+            $conection->exec('SET CHARACTER SET UTF8');
+
+            $result = $conection->prepare($sql);
+
+            $result->execute(array($id));
             
         }catch(Exception $e){
             die("error ".$e->getMessage());

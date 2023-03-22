@@ -41,6 +41,9 @@ include("php/instalaciones/layoutIndexInstalaciones.php");
 ?>
 
 <?php
+if (!class_exists('ParameterConection')) {
+    include("database/ParameterConection.php");
+}
 include("php/autorities/layoutAutorities.php");
 ?>
 

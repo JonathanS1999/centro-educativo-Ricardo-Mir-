@@ -3,7 +3,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Iniciar Sesión</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css'  href='css/sessionManager/sessionManager.css'>
 </head>
@@ -20,10 +20,10 @@
 		<div class="container-form">
 			<div class="div-title"><h5 class="title">Sesión</h5></div>
 			<form class="form" method="post">
-				<label>User</label>
+				<label>Usuario</label>
 				<input type="text" name="user">
-				<label>Password</label>
-				<input type="text" name="password">
+				<label>contraseña</label>
+				<input type="password" name="password">
 				<div class="container-buttons">
 					<div>
 					<input type="submit" class="btnsession" value="Enviar datos" name="btn">

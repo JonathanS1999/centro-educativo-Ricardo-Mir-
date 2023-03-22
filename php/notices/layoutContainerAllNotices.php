@@ -19,6 +19,11 @@
     class ViewNoticesAll extends  ParameterConection {
 
         private static $ADMIN=false;
+        private $tipe=0;
+
+     function setType($type){
+            $this->tipe=$type;
+        }
 
       function getNoytices($sql){
 
@@ -46,9 +51,9 @@
                     echo $arrayDiv[0];
                     $count=0;
                    }
-                   
-                   $linkEdit="'../databaseForm/subirDataForm.php?op=0&update=".$notices['id']."'";
-                   $linkDelete="'../databaseForm/subirDataForm.php?op=0&del=".$notices['id']."'";
+                   $id=$notices['id'];
+                   $linkEdit="'../databaseForm/subirDataForm.php?op=$this->tipe&update=".$notices['id']."'";
+                   $linkDelete="'../databaseForm/subirDataForm.php?op=$this->tipe&del=".$notices['id']."'";
                    include("../notices/itemCardNotice.php");
                    $count++;
                }
@@ -75,16 +80,18 @@
     $sql="";
 
     if($opt=="pr"){
-        $sql='SELECT * FROM dataproyectnotices where tipo=1;';
+        $sql='SELECT * FROM dataproyectnotices where tipo=1 order by id desc;';
         if(isset($admin)){
             $viewNotices->setAdmin($admin);
         }
+        $viewNotices->setType(1);
         $viewNotices->getNoytices($sql);
     }else{
          if(isset($admin)){
              $viewNotices->setAdmin($admin);
          }
-        $sql='SELECT * FROM dataproyectnotices where tipo=0;';
+        $viewNotices->setType(0);
+        $sql='SELECT * FROM dataproyectnotices where tipo=0 order by id desc;';
         $viewNotices->getNoytices($sql);
     }
     

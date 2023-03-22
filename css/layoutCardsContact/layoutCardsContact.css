@@ -40,3 +40,16 @@ margin: 15px auto auto auto;
 .containerCardContacts .containerCardContacts2 .item1Contac2{
     margin: 5px auto auto auto;
 }
+
+@media (max-width:800px){
+    .containerCardContacts .containerCardContacts2{
+        flex-direction: column;
+    }
+    .containerCardContacts .containerCardContacts2 .item1Contac{
+        margin:15px auto auto auto;
+    }
+        
+    .containerCardContacts .containerCardContacts2 .item1Contac2{
+        margin: 15px auto auto auto;
+    }
+}

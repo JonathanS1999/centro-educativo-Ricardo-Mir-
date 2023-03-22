@@ -31,6 +31,7 @@
 .containerPQ .containerMSJ{
 	display: flex;
 	align-content: space-evenly;
+	flex-direction: row;
 	background: rgba( 0, 0, 0 , 0.7);
 }
 
@@ -64,4 +65,13 @@ margin: auto;
 	width: 70%;
 	height: auto;
 	margin: auto;
+}
+
+@media (max-width:800px){
+	.containerPQ .containerMSJ{
+		flex-direction: column;
+	}
+	.imgPQ img{
+		width: 100%;
+	}
 }

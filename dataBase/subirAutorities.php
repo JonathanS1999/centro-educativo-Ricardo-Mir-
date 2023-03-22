@@ -1,6 +1,7 @@
 <?php
-
-include("ParameterConection.php");
+if(!class_exists("ParameterConection")){
+    include("ParameterConection.php");
+}
 
 class SubirData extends ParameterConection{
 
@@ -57,6 +58,8 @@ if(isset($_POST['btn'])){
     echo " por favor  selecciona una imagen";
  }
 
+}else{
+    echo " no pasa por btn";
 }
 
 ?>

@@ -19,7 +19,7 @@ if (!class_exists('ParameterConection')){
 
       private static $ADMIN=false;
 
-      function getImages($sql){
+      function getImages($sql,$tg){
 
           try {
             
@@ -43,9 +43,16 @@ if (!class_exists('ParameterConection')){
                   echo " <div class='layoutGaleryMenu'>";
                     $increment = 0;
                 }
-                $linkEdit="'../databaseForm/subirImagesGalery.php?tg=0&update=".$notices['id']."'";
-                $linkDelete="'../databaseForm/subirImagesGalery.php?tg=0&del=".$notices['id']."'";
-                include("../galery/containerGalery/itemGalery.php");
+
+                $linkEdit="'../databaseForm/subirImagesGalery.php?tg=$tg&update=".$notices['id']."'";
+                $linkDelete="'../databaseForm/subirImagesGalery.php?tg=$tg&del=".$notices['id']."'";
+                $id=$notices['id'];
+                if($tg==2){
+                   include("../galery/containerGalery/itemVideo.php");
+                   $increment=3;
+                }else{
+                   include("../galery/containerGalery/itemGalery.php");
+                }
                 $increment++;
 
                }
@@ -70,6 +77,7 @@ if (!class_exists('ParameterConection')){
     }
     
     $viewImages=new ViewImagesInGalery();
+
     if(isset($_GET["tg"])){
       $tipoGaleria=$_GET["tg"];
       $sql="";
@@ -79,23 +87,32 @@ if (!class_exists('ParameterConection')){
         }
 
       switch($tipoGaleria){
-        case 1 : 
-                echo "<div class='menuGalery'>
-                     <a class='centerNOW' href='reciberOptionsMenu.php?view=2&op=ga&tg=1'> Nuestras instalaciones </a>
-                     <a class='center' href='reciberOptionsMenu.php?view=2&op=ga&tg=2'> Fotos  </a>
-                     <a class='center' href='#'> Videos </a>
-                     </div>";
-                $sql="SELECT * FROM instalaciones";
-                 $viewImages->getImages($sql);
-                break;
-        default :
+        case 0:
                   echo "<div class='menuGalery'>
-                  <a class='center' href='reciberOptionsMenu.php?view=2&op=ga&tg=1'> Nuestras instalaciones </a>
-                  <a class='centerNOW' href='reciberOptionsMenu.php?view=2&op=ga&tg=2'> Fotos  </a>
-                  <a class='center' href='#'> Videos </a>
+                  <a class='center' href=$arrayLinks[0]> Nuestras instalaciones </a>
+                  <a class='centerNOW' href=$arrayLinks[1]> Fotos  </a>
+                  <a class='center' href=$arrayLinks[2]> Videos </a>
                   </div>";
                  $sql="SELECT * FROM photos";
-                 $viewImages->getImages($sql);
+                 $viewImages->getImages($sql,$tipoGaleria);
+                 break;
+        case 1: 
+                  echo "<div class='menuGalery'>
+                       <a class='centerNOW' href=$arrayLinks[0]> Nuestras instalaciones </a>
+                       <a class='center' href=$arrayLinks[1]> Fotos  </a>
+                       <a class='center' href=$arrayLinks[2]> Videos </a>
+                       </div>";
+                  $sql="SELECT * FROM instalaciones";
+                   $viewImages->getImages($sql,$tipoGaleria);
+                  break;
+        case 2:
+                  echo "<div class='menuGalery'>
+                  <a class='center' href=$arrayLinks[0]> Nuestras instalaciones </a>
+                  <a class='center' href=$arrayLinks[1]> Fotos  </a>
+                  <a class='centerNOW' href=$arrayLinks[2]> Videos </a>
+                  </div>";
+                 $sql="SELECT * FROM videos order by id desc ";
+                 $viewImages->getImages($sql,$tipoGaleria);
                  break;
       }
     }

@@ -24,11 +24,12 @@ background:  #bcbde5;
 
 .containerMisionVision{
 	display: flex;
+	flex-direction: row;
 	align-content: space-evenly;
 }
 
 .containerMisionVision .divMisionVision{
-	width: 55%;
+	width: auto;
 	padding-left: 3%;
 	background: #07437c;
 }
@@ -39,7 +40,7 @@ background:  #bcbde5;
 	display: flex;
 	flex-direction: row;
 	align-content: space-evenly;
-	height: 160px;
+	height: auto;
 	color: white;
 }
 
@@ -71,4 +72,15 @@ background:  #bcbde5;
 	height: 200px;
 	margin: auto;
 	border-radius: 50%;
+}
+
+@media (max-width:800px){
+	.containerMisionVision{
+	flex-direction: column-reverse;
+	}
+	.containerMisionVision .divMisionVision{
+		width: 100%;
+		padding-left: 3%;
+	}
+	
 }
